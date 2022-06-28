@@ -1,3 +1,5 @@
+import characters.Warrior;
+import characters.Wizard;
 import ui.ConsoleColors;
 import ui.Menu;
 
@@ -8,6 +10,11 @@ public class Main {
 
         Menu menu = new Menu();
         menu.main();
+
+        Graveyard.test();
+
+
+
 
     }
 
