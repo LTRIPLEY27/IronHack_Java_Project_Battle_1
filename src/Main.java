@@ -1,17 +1,13 @@
+import ui.ConsoleColors;
+import ui.Menu;
+
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 
-        battle(party1, party2);
-
-
-
-    }
-
-    static void createParty(){
-
-    }
-
-    static void battle(){
+        Menu menu = new Menu();
+        menu.main();
 
     }
 
