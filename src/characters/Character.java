@@ -1,3 +1,5 @@
+package characters;
+
 public abstract class Character {
     private String name;
     private int id;

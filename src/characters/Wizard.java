@@ -1,9 +1,11 @@
-public class Wizzard extends Character{
+package characters;
+
+public class Wizard extends Character{
 
     private int mana;
     private int intelligence;
 
-    public Wizzard(String name, int id, double hp, boolean isAlive, int mana, int intelligence) {
+    public Wizard(String name, int id, double hp, boolean isAlive, int mana, int intelligence) {
         super(name, id, hp, isAlive);
         setMana(mana);
         setIntelligence(intelligence);
