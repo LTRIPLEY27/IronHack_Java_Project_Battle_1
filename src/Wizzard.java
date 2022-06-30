@@ -1,6 +1,4 @@
 public class Wizzard extends Character{
-
-
     private int mana;
     private int intelligence;
 
