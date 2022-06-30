@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public abstract class Character {
     private String name;
     private int id;
