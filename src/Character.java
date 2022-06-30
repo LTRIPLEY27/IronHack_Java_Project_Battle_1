@@ -1,8 +1,12 @@
+import java.util.Random;
+
 public abstract class Character {
-    private String name;
-    private int id;
-    private double hp;
-    private boolean isAlive;
+    protected String name;
+    protected int id;
+    protected double hp;// VERIFICAR SI ES DOUBLE O INTEGER
+    protected boolean isAlive;
+
+    protected Random value = new Random();
 
     public Character(String name, int id, double hp, boolean isAlive) {
         setId(id);
