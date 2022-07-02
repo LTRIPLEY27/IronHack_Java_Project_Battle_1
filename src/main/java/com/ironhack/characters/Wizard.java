@@ -1,4 +1,4 @@
-package characters;
+package com.ironhack.characters;
 
 public class Wizard extends Character{
 
