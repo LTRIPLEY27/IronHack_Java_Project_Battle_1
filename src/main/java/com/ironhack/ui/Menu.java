@@ -1,4 +1,4 @@
-package ui;
+package com.ironhack.ui;
 
 import java.util.Scanner;
 

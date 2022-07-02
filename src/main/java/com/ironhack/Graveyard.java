@@ -1,29 +1,30 @@
-import characters.Wizard;
-import characters.Warrior;
+package com.ironhack;
 
-import java.sql.SQLOutput;
+import com.ironhack.characters.Wizard;
+import com.ironhack.characters.Warrior;
+
 import java.util.ArrayList;
 
 
 /**
- * This is a class to create a Graveyard. The place where all
+ * This is a class to create a com.ironhack.Graveyard. The place where all
  * dead characters go.
  */
 public class Graveyard {
     ArrayList<Wizard> deadWizards;
     ArrayList<Warrior> deadWarriors;
 
-    //Graveyard constructor
+    //com.ironhack.Graveyard constructor
     public Graveyard() {
         this.deadWizards = new ArrayList<Wizard>();
         this.deadWarriors = new ArrayList<Warrior>();
-        System.out.println("The Graveyard has been created... 🪦");
+        System.out.println("The com.ironhack.Graveyard has been created... 🪦");
         System.out.println("no bodies have been buried yet...  ");
 
     }
 
     /**
-     * This method is just for testing the functionality of the Graveyard
+     * This method is just for testing the functionality of the com.ironhack.Graveyard
      */
     public static void test(){
         Graveyard graveyard = new Graveyard();
@@ -39,7 +40,7 @@ public class Graveyard {
 
 
     /**
-     * showGraveyard() shows the current state of the Graveyard
+     * showGraveyard() shows the current state of the com.ironhack.Graveyard
      * revealing if there are any dead wizards or warriors
      * burried in it.
      */

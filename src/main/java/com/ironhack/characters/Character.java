@@ -1,4 +1,4 @@
-package characters;
+package com.ironhack.characters;
 
 public abstract class Character {
     private String name;
