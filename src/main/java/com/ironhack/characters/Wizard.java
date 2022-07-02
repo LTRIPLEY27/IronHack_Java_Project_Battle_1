@@ -9,7 +9,7 @@ public class Wizard extends Character{
     private final int MINIMUM_INTELLIGENCE = 1;
     private final int MAXIMUM_INTELLIGENCE = 50;
     private final int MINIMUM_MANA = 10;
-    private final int MAXIMUN_MANA = 50;
+    private final int MAXIMUM_MANA = 50;
 
     public Wizard(String name, int id, double hp, boolean isAlive, int mana, int intelligence) {
         super(name, id, hp, isAlive);
