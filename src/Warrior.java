@@ -4,7 +4,6 @@ public class Warrior extends Character{
     private int strength;
 
     private final int MINIMUM_STAMINA = 10;
-
     private final int MAXIMUM_STAMINA = 50;
     private final int MINIMUN_HP = 100;
     private final int MAXIMUN_HP = 200;
