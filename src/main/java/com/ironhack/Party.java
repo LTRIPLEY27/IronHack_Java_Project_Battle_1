@@ -1,20 +1,18 @@
 package com.ironhack;
 
+import com.ironhack.characters.Character;
 import com.ironhack.characters.Warrior;
 import com.ironhack.characters.Wizard;
-import com.ironhack.characters.Character;
 
 import java.util.ArrayList;
 
 public class Party {
 
-    static ArrayList<Character> members;
+    private ArrayList<Character> members = new ArrayList<Character>();
 
-    public Party() {
-        this.members = new ArrayList<Character>();
-    }
+    public Party() {}
 
-    public static void addCharacter(Character member) {
+    public void addCharacter(Character member) {
         members.add(member);
     }
 
@@ -24,15 +22,16 @@ public class Party {
         }
     }
 
-    public static void test(){
+    public static void test() {
         Party party = new Party();
 
         Character Merlin = new Wizard("Merlin", 3, 200, true, 500, 100);
         Character VatoLoco = new Warrior("Vato Loco", 3, 200, true, 500, 100);
 
-        Party.addCharacter(Merlin);
-        Party.addCharacter(VatoLoco);
+        party.addCharacter(Merlin);
+        party.addCharacter(VatoLoco);
 
         party.membersParty();
+
     }
 }
