@@ -1,9 +1,6 @@
-import characters.Warrior;
-import characters.Wizard;
-import ui.ConsoleColors;
-import ui.Menu;
+package com.ironhack;
 
-import java.util.Scanner;
+import com.ironhack.ui.Menu;
 
 public class Main {
     public static void main(String[] args) {

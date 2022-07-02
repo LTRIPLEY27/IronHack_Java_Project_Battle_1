@@ -1,4 +1,4 @@
-package ui;
+package com.ironhack.ui;
 
 public class ConsoleColors {
     // Reset
