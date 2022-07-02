@@ -1,4 +1,6 @@
-public class Warrior extends Character{
+package com.ironhack.characters;
+
+public class Warrior extends Character {
 
     private int stamina;
     private int strength;

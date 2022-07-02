@@ -1,4 +1,7 @@
-public class Wizzard extends Character{
+package com.ironhack.characters;
+
+public class Wizard extends Character{
+
     private int mana;
     private int intelligence;
     private final int MINIMUM_HP = 50;
@@ -8,7 +11,7 @@ public class Wizzard extends Character{
     private final int MINIMUM_MANA = 10;
     private final int MAXIMUN_MANA = 50;
 
-    public Wizzard(String name, int id, double hp, boolean isAlive, int mana, int intelligence) {
+    public Wizard(String name, int id, double hp, boolean isAlive, int mana, int intelligence) {
         super(name, id, hp, isAlive);
         setMana(mana);
         setIntelligence(intelligence);

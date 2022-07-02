@@ -1,4 +1,4 @@
-import java.util.Random;
+package com.ironhack.characters;
 
 public abstract class Character {
     protected String name;
