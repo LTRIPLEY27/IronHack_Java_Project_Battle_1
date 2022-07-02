@@ -1,6 +1,12 @@
 public class Wizzard extends Character{
     private int mana;
     private int intelligence;
+    private final int MINIMUM_HP = 50;
+    private final int MAXIMUN_HP = 100;
+    private final int MINIMUM_INTELLIGENCE = 1;
+    private final int MAXIMUN_INTELLIGENCE = 50;
+    private final int MINIMUM_MANA = 10;
+    private final int MAXIMUN_MANA = 50;
 
     public Wizzard(String name, int id, double hp, boolean isAlive, int mana, int intelligence) {
         super(name, id, hp, isAlive);
@@ -8,25 +14,13 @@ public class Wizzard extends Character{
         setIntelligence(intelligence);
     }
 
-    //RAMDOM VALUES
-    public Wizzard(String name, int id, double hp, boolean isAlive) {
-        super(name, id, hp, isAlive);
-        setMana();
-        setIntelligence();
-    }
-    @Override// VERIFICAR EL RANDOM CHARACTER
-    public void setHp(double hp) {
-        this.hp = value.nextDouble(50, 100);
-    }
+
     public int getMana() {
         return mana;
     }
 
     public void setMana(int mana) {
         this.mana = mana;
-    }
-    public void setMana() {
-        this.mana = value.nextInt(10,50);
     }
 
     public int getIntelligence() {
@@ -36,7 +30,5 @@ public class Wizzard extends Character{
     public void setIntelligence(int intelligence) {
         this.intelligence = intelligence;
     }
-    public void setIntelligence() {
-        this.intelligence = value.nextInt(1,50);
-    }
+
 }
