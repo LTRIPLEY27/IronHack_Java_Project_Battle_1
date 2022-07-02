@@ -7,8 +7,8 @@ public class Warrior extends Character {
 
     private final int MINIMUM_STAMINA = 10;
     private final int MAXIMUM_STAMINA = 50;
-    private final int MINIMUN_HP = 100;
-    private final int MAXIMUN_HP = 200;
+    private final int MINIMUM_HP = 100;
+    private final int MAXIMUM_HP = 200;
     private final int MAXIMUM_STRENGTH = 10;
     private final int MINIMUM_STRENGTH = 1;
 
