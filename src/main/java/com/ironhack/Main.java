@@ -9,11 +9,6 @@ public class Main {
         menu.main();
 
         Graveyard.test();
-
-
-
-
+        Party.test();
     }
-
-
 }
