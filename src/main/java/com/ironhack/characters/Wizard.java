@@ -53,7 +53,7 @@ public class Wizard extends Character{
         setIntelligence((int) num.nextDouble(MINIMUM_INTELLIGENCE,MAXIMUM_INTELLIGENCE));
 
 
-        return new Wizard(super.getName(), super.getId(), super.getHp(), super.getIsAlive(), getMana(), getIntelligence());
+        return new Wizard(getName(), getId(), getHp(), getIsAlive(), getMana(), getIntelligence());
     }
 
     @Override
