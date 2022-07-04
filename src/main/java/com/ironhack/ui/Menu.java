@@ -1,15 +1,15 @@
 package com.ironhack.ui;
 
+import com.ironhack.characters.Warrior;
+
 import java.util.Scanner;
 
 public class Menu {
 
-    
-
     private final Scanner scanner = new Scanner(System.in);
 
     public void main() {
-        String input;
+        /*String input;
         do {
             var mainMenu = """
                     Welcome to Battle Simulator
@@ -42,6 +42,9 @@ public class Menu {
 
     public void printWithColor(String text, String color){
         System.out.println(color + text + ConsoleColors.RESET);
-    }
+    }*/
 
+
+
+    }
 }

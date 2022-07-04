@@ -29,8 +29,8 @@ public class Graveyard {
     public static void test(){
         Graveyard graveyard = new Graveyard();
 
-        var Merlin = new Wizard("Merlin", 3, 200, true, 500, 100);
-        var VatoLoco = new Warrior("Vato Loco", 3, 200, true, 500, 100);
+        var Merlin = new Wizard("Merlin", "3", 200, true, 500, 100);
+        var VatoLoco = new Warrior("Vato Loco", "3", 200, true, 500, 100);
 
         graveyard.addDeadCharacter(Merlin);
         graveyard.addDeadCharacter(VatoLoco);
