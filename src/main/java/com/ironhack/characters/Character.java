@@ -1,10 +1,10 @@
-import java.util.Random;
+package com.ironhack.characters;
 
 public abstract class Character {
-    private String name;
-    private int id;
-    private double hp;
-    private boolean isAlive;
+    protected String name;
+    protected int id;
+    protected double hp;// VERIFICAR SI ES DOUBLE O INTEGER
+    protected boolean isAlive;
 
     public static final String SUFFIX_NAME = " Jr";
     public Character(String name, int id, double hp, boolean isAlive) {
@@ -14,25 +14,13 @@ public abstract class Character {
         setAlive(isAlive);
     }
 
-    //RANDOM
-    public Character() {
-        this.name = name;
-        this.id = id;
-        this.hp = hp;
-        this.isAlive = isAlive;
-        this.value = value;
-    }
+
 
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
-        this.name = name;
-    }
-
-    // crear el array de nombres e iterar random para crear personaje random
-    public void setName() {
         this.name = name;
     }
 

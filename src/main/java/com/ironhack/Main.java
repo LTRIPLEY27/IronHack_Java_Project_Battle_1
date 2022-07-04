@@ -11,4 +11,6 @@ public class Main {
         Graveyard.test();
         Party.test();
     }
+
+
 }
