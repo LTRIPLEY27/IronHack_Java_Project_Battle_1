@@ -13,15 +13,6 @@ public class Main {
 
         Graveyard.test();
 
-        Warrior warlock = new Warrior();
-        Wizard lizard = new Wizard();
-        lizard.randomCharacter();
-        System.out.println(lizard.toString()
-        );
-
-        warlock.randomCharacter();
-        System.out.println(warlock.toString());
-
     }
 
 

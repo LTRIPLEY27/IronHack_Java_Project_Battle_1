@@ -49,13 +49,13 @@ public class Warrior extends Character {
     public Character randomCharacter() {
         var faker = new Faker();
         Random num = new Random();
+
         super.setName(faker.name().firstName());
         super.setId(faker.idNumber().valid());
         super.setHp(Math.floor(num.nextDouble(MINIMUM_HP,MAXIMUM_HP) * 100 / 100));
         super.setAlive(true);
         setStamina((int) num.nextDouble(MINIMUM_STAMINA,MAXIMUM_STAMINA));
         setStrength((int) num.nextDouble(MINIMUM_STRENGTH,MAXIMUM_STRENGTH));
-
 
         return new Warrior(super.getName(), super.getId(), super.getHp(), super.getIsAlive(), getStamina(), getStrength());
     }

@@ -5,11 +5,10 @@ import net.datafaker.Faker;
 public abstract class Character {
     protected String name;
     protected String id;
-    protected double hp;// VERIFICAR SI ES DOUBLE O INTEGER
+    protected double hp;
     protected boolean isAlive;
 
-    public Character() {
-    }
+    public Character() {}
 
     public Character(String name, String id, double hp, boolean isAlive) {
         setId(id);

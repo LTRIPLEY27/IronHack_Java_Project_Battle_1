@@ -15,9 +15,7 @@ public class Wizard extends Character{
     private final int MINIMUM_MANA = 10;
     private final int MAXIMUM_MANA = 50;
 
-    public  Wizard(){
-
-    }
+    public  Wizard(){}
 
     public Wizard(String name, String id, double hp, boolean isAlive, int mana, int intelligence) {
         super(name, id, hp, isAlive);
@@ -46,6 +44,7 @@ public class Wizard extends Character{
     public Character randomCharacter() {
         var faker = new Faker();
         Random num = new Random();
+
         super.setName(faker.name().firstName());
         super.setId(faker.idNumber().valid());
         super.setHp(Math.floor(num.nextDouble(MINIMUM_HP,MAXIMUM_HP) * 100 / 100));
