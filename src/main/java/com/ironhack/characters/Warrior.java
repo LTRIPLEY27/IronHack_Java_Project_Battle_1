@@ -1,5 +1,9 @@
 package com.ironhack.characters;
 
+import net.datafaker.Faker;
+
+import java.util.Random;
+
 public class Warrior extends Character {
 
     public static final int STAMINA_ATTACK_THRESHOLD = 5;
@@ -17,7 +21,9 @@ public class Warrior extends Character {
     private final int MAXIMUM_STRENGTH = 10;
     private final int MINIMUM_STRENGTH = 1;
 
+    public Warrior(){
 
+    }
 
 
     public Warrior(String name, int id, double hp, boolean isAlive, int stamina, int strength) {
@@ -43,6 +49,7 @@ public class Warrior extends Character {
     public void setStrength(int strength) {
         this.strength = strength;
     }
+
 
     @Override
     public double attack() {

@@ -1,5 +1,9 @@
 package com.ironhack.characters;
 
+import net.datafaker.Faker;
+
+import java.util.Random;
+
 public class Wizard extends Character{
 
     public static final int MANA_ATTACK_THRESHOLD = 5;
@@ -53,4 +57,5 @@ public class Wizard extends Character{
             return  STAFF_HIT_DAMAGE;
         }
     }
+
 }

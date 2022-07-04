@@ -37,6 +37,7 @@ public abstract class Character {
         this.id = id;
     }
 
+
     public double getHp() {
         return hp;
     }
@@ -45,18 +46,14 @@ public abstract class Character {
         this.hp = hp;
     }
 
-    //RANDOM
-    public void setHp() {
-        this.hp = hp;
-    }
-
-    public boolean isAlive() {
+    public boolean getIsAlive() {
         return isAlive;
     }
 
     public void setAlive(boolean alive) {
         isAlive = alive;
     }
+    public abstract Character randomCharacter();
 
     public abstract double attack();
 }

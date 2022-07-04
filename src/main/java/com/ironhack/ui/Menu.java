@@ -1,14 +1,12 @@
 package com.ironhack.ui;
 
-import com.ironhack.characters.Character;
 import com.ironhack.characters.Warrior;
-import com.ironhack.characters.Wizard;
 
 import java.util.Scanner;
 
 public class Menu {
 
-    
+
 
     private final Scanner scanner = new Scanner(System.in);
 
