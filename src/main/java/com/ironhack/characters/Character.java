@@ -2,6 +2,8 @@ package com.ironhack.characters;
 
 import net.datafaker.Faker;
 
+import java.util.Random;
+
 public abstract class Character {
     protected String name;
     protected String id;
@@ -49,7 +51,44 @@ public abstract class Character {
     public void setAlive(boolean alive) {
         isAlive = alive;
     }
-    public abstract Character randomCharacter();
 
+    public void randomCharacter() {
+    }
 
+    public static Character generatedCharacter() {
+        Character character = new Character() {
+            public void randomCharacter() {
+                /*var faker = new Faker();
+                Random num = new Random();
+
+                setName(faker.name().firstName());
+                setId(faker.idNumber().valid());
+                setHp(0);
+                setAlive(true);*/
+
+            }
+
+        };
+
+        var faker = new Faker();
+        Random num = new Random();
+
+        character.setName(faker.name().firstName());
+        character.setId(faker.idNumber().valid());
+        character.setHp(0);
+        character.setAlive(true);
+
+        return character;
+
+    }
+
+    @Override
+    public String toString() {
+        return "Character{" +
+                "name='" + name + '\'' +
+                ", id='" + id + '\'' +
+                ", hp=" + hp +
+                ", isAlive=" + isAlive +
+                '}';
+    }
 }

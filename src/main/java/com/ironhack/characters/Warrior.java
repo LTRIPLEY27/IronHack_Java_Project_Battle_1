@@ -45,7 +45,7 @@ public class Warrior extends Character {
     }
 
 
-    @Override
+    /*@Override
     public Character randomCharacter() {
         var faker = new Faker();
         Random num = new Random();
@@ -58,9 +58,19 @@ public class Warrior extends Character {
         setStrength((int) num.nextDouble(MINIMUM_STRENGTH,MAXIMUM_STRENGTH));
 
         return new Warrior(super.getName(), super.getId(), super.getHp(), super.getIsAlive(), getStamina(), getStrength());
+    }*/
+
+    public Warrior gettingWarrior(){
+        Random num = new Random();
+
+        setHp(Math.floor(num.nextDouble(MINIMUM_HP,MAXIMUM_HP) * 100 / 100));
+        setStamina((int) num.nextDouble(MINIMUM_STAMINA,MAXIMUM_STAMINA));
+        setStrength((int) num.nextDouble(MINIMUM_STRENGTH,MAXIMUM_STRENGTH));
+
+        return new Warrior(Character.generatedCharacter().getName(), Character.generatedCharacter().getId(), getHp(), Character.generatedCharacter().getIsAlive(), getStamina(), getStrength());
     }
 
-    @Override
+    /*@Override
     public String toString() {
         return "Warrior{" +
                 "name='" + name + '\'' +
@@ -70,5 +80,5 @@ public class Warrior extends Character {
                 "stamina=" + stamina +
                 ", strength=" + strength +
                 '}';
-    }
+    }*/
 }

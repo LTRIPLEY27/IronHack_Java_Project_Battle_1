@@ -1,6 +1,7 @@
 package com.ironhack.ui;
 
 import com.ironhack.Graveyard;
+import com.ironhack.characters.Character;
 import com.ironhack.characters.Warrior;
 import com.ironhack.characters.Wizard;
 
@@ -11,6 +12,7 @@ public class Menu {
     private final Scanner scanner = new Scanner(System.in);
 
     public void main() {
+        System.out.println(Character.generatedCharacter());
         String input;
         do {
             var mainMenu = """
@@ -46,8 +48,8 @@ public class Menu {
 
     private void randomWizard() {
         Wizard lizard = new Wizard();
-        lizard.randomCharacter();
-        System.out.println(lizard.toString());
+        //lizard.randomCharacter();
+        System.out.println(lizard.gettingWizard());
     }
 
     private void createWarrior() {
@@ -56,8 +58,7 @@ public class Menu {
 
     private void randomWarrior() {
         Warrior warlock = new Warrior();
-        warlock.randomCharacter();
-        System.out.println(warlock.toString());
+        System.out.println(warlock.gettingWarrior());
     }
 
     //SOLO A MODO DE PRUEBA, EDITAR EN LA CLASE GRAVEYARD

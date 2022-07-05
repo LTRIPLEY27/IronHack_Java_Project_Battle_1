@@ -40,7 +40,7 @@ public class Wizard extends Character{
         this.intelligence = intelligence;
     }
 
-    @Override
+    /*@Override
     public Character randomCharacter() {
         var faker = new Faker();
         Random num = new Random();
@@ -66,6 +66,16 @@ public class Wizard extends Character{
                 ", mana=" + mana +
                 ", intelligence=" + intelligence +
                 '}';
+    }*/
+
+    public Wizard gettingWizard(){
+        Random num = new Random();
+
+        setHp(Math.floor(num.nextDouble(MINIMUM_HP,MAXIMUM_HP) * 100 / 100));
+        setMana((int) num.nextDouble(MINIMUM_MANA,MAXIMUM_MANA));
+        setIntelligence((int) num.nextDouble(MINIMUM_INTELLIGENCE,MAXIMUM_INTELLIGENCE));
+
+        return new Wizard(Character.generatedCharacter().getName(), Character.generatedCharacter().getId(), getHp(), Character.generatedCharacter().getIsAlive(), getMana(), getIntelligence());
     }
 
 }
