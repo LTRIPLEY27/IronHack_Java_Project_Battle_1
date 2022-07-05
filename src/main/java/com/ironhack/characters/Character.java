@@ -1,5 +1,7 @@
 package com.ironhack.characters;
 
+import net.datafaker.Faker;
+
 public abstract class Character {
     protected String name;
     protected int id;
