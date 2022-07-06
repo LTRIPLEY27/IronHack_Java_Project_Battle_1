@@ -6,6 +6,7 @@ public abstract class Character {
     private double hp;
     private boolean isAlive;
 
+    public static final String SUFFIX_NAME = " Jr";
     public Character(String name, int id, double hp, boolean isAlive) {
         setId(id);
         setName(name);
