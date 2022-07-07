@@ -1,5 +1,7 @@
 package com.ironhack.ui;
 
+import com.ironhack.Graveyard;
+
 import java.util.Scanner;
 
 public class Menu {
@@ -7,6 +9,7 @@ public class Menu {
     
 
     private final Scanner scanner = new Scanner(System.in);
+    private final Graveyard graveyard = new Graveyard();
 
     public void main() {
         String input;
@@ -16,6 +19,7 @@ public class Menu {
                     ===============
                     [0] - Warrior creator
                     [1] - Wizard creator
+                    [2] - Show Graveyard
                     
                     [exit] - Exit Battle Simulator
                     ===============
@@ -26,6 +30,7 @@ public class Menu {
             switch (input) {
                 case "0" -> createWarrior();
                 case "1" -> createWizard();
+                case "2" -> showGraveyard();
                 case "exit" -> printWithColor("Bye bye", ConsoleColors.GREEN);
                 default -> printWithColor("Command not recognized!", ConsoleColors.RED);
             }
@@ -38,6 +43,10 @@ public class Menu {
 
     private void createWarrior() {
 
+    }
+
+    private void showGraveyard() {
+        graveyard.showGraveyard();
     }
 
     public void printWithColor(String text, String color){
