@@ -60,4 +60,18 @@ public abstract class Character {
     public abstract Character randomCharacter();
 
     public abstract double attack();
+
+    public static String generateId() {
+        return UUID.randomUUID().toString();
+    }
+
+    @Override
+    public String toString() {
+        return "Character{" +
+                "name='" + name + '\'' +
+                ", id='" + id + '\'' +
+                ", hp=" + hp +
+                ", isAlive=" + isAlive +
+                '}';
+    }
 }

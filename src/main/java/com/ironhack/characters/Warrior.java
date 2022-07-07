@@ -3,6 +3,7 @@ package com.ironhack.characters;
 import net.datafaker.Faker;
 
 import java.util.Random;
+import java.util.UUID;
 
 public class Warrior extends Character {
 
@@ -14,12 +15,12 @@ public class Warrior extends Character {
     private int stamina;
     private int strength;
 
-    private final int MINIMUM_STAMINA = 10;
-    private final int MAXIMUM_STAMINA = 50;
-    private final int MINIMUN_HP = 100;
-    private final int MAXIMUN_HP = 200;
-    private final int MAXIMUM_STRENGTH = 10;
-    private final int MINIMUM_STRENGTH = 1;
+    private static final int MINIMUM_STAMINA = 10;
+    private static final int MAXIMUM_STAMINA = 50;
+    private static final int MINIMUM_HP = 100;
+    private static final int MAXIMUM_HP = 200;
+    private static final int MAXIMUM_STRENGTH = 10;
+    private static final int MINIMUM_STRENGTH = 1;
 
     public Warrior(String name, String id, double hp, boolean isAlive, int stamina, int strength) {
         super(name, id, hp, isAlive);
@@ -45,6 +46,15 @@ public class Warrior extends Character {
         this.strength = strength;
     }
 
+    //public Warrior gettingWarrior() {
+    public void gettingWarrior() {
+        Random num = new Random();
+
+        setHp(Math.floor(num.nextDouble(MINIMUM_HP,MAXIMUM_HP) * 100 / 100));
+        setStamina((int) num.nextDouble(MINIMUM_STAMINA,MAXIMUM_STAMINA));
+        setStrength((int) num.nextDouble(MINIMUM_STRENGTH,MAXIMUM_STRENGTH));
+
+        //new Warrior(Character.randomName, Character.randomId, getHp(), Character.randomIsAlive, getStamina(), getStrength());
 
     @Override
     public double attack() {
