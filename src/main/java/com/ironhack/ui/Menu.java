@@ -46,10 +46,7 @@ public class Menu {
     }
 
     private void randomWizard() {
-        Character.randomCharacter();
-        Wizard lizard = null;
-        lizard.gettingWizard();
-        System.out.println(lizard.gettingWizard());
+
     }
 
     private void createWarrior() {
@@ -58,9 +55,7 @@ public class Menu {
 
     private void randomWarrior() {
         Warrior warlock = null;
-        warlock.gettingWarrior();
 
-        //System.out.println(warlock.gettingWarrior());
 
     }
 

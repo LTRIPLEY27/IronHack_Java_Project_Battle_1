@@ -11,8 +11,6 @@ public abstract class Character {
     protected double hp;
     protected boolean isAlive;
 
-    //public Character() {}
-
     public Character(String name, String id, double hp, boolean isAlive) {
         setId(id);
         setName(name);

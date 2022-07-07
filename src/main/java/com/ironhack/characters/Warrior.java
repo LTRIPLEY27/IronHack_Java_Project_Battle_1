@@ -41,7 +41,7 @@ public class Warrior extends Character {
         this.strength = strength;
     }
 
-    public static Character generateRandom() {
+    public static Warrior generateRandom() {
         Random random = new Random();
         var faker = new Faker();
 
