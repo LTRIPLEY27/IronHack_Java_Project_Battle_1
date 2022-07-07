@@ -3,16 +3,13 @@ package com.ironhack.characters;
 import net.datafaker.Faker;
 
 import java.util.Random;
+import java.util.UUID;
 
 public abstract class Character {
     protected String name;
-    protected static  String randomName;
     protected String id;
-    protected static String randomId;
     protected double hp;
-    protected static double randomHp;
     protected boolean isAlive;
-    protected static boolean randomIsAlive;
 
     //public Character() {}
 
@@ -56,19 +53,9 @@ public abstract class Character {
         isAlive = alive;
     }
 
-    public static void randomCharacter() {
-        Random num = new Random();
-        var faker = new Faker();
-
-        randomName = faker.name().firstName();
-        randomId = faker.idNumber().valid();
-        randomHp = 0;
-        randomIsAlive = true;
-
-        System.out.println(randomName);
-        System.out.println(randomId);
+    public static String generateId() {
+        return UUID.randomUUID().toString();
     }
-
 
     @Override
     public String toString() {

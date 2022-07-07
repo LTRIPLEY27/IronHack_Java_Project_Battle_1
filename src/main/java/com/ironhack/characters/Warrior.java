@@ -3,18 +3,19 @@ package com.ironhack.characters;
 import net.datafaker.Faker;
 
 import java.util.Random;
+import java.util.UUID;
 
 public class Warrior extends Character {
 
     private int stamina;
     private int strength;
 
-    private final int MINIMUM_STAMINA = 10;
-    private final int MAXIMUM_STAMINA = 50;
-    private final int MINIMUM_HP = 100;
-    private final int MAXIMUM_HP = 200;
-    private final int MAXIMUM_STRENGTH = 10;
-    private final int MINIMUM_STRENGTH = 1;
+    private static final int MINIMUM_STAMINA = 10;
+    private static final int MAXIMUM_STAMINA = 50;
+    private static final int MINIMUM_HP = 100;
+    private static final int MAXIMUM_HP = 200;
+    private static final int MAXIMUM_STRENGTH = 10;
+    private static final int MINIMUM_STRENGTH = 1;
 
     public Warrior(String name, String id, double hp, boolean isAlive, int stamina, int strength) {
         super(name, id, hp, isAlive);
@@ -40,30 +41,32 @@ public class Warrior extends Character {
         this.strength = strength;
     }
 
-    //public Warrior gettingWarrior() {
-    public void gettingWarrior() {
-        Random num = new Random();
+    public static Character generateRandom() {
+        Random random = new Random();
+        var faker = new Faker();
 
-        setHp(Math.floor(num.nextDouble(MINIMUM_HP,MAXIMUM_HP) * 100 / 100));
-        setStamina((int) num.nextDouble(MINIMUM_STAMINA,MAXIMUM_STAMINA));
-        setStrength((int) num.nextDouble(MINIMUM_STRENGTH,MAXIMUM_STRENGTH));
+        var randomName = faker.name().firstName();
+        var randomId = Character.generateId();
+        var randomIsAlive = random.nextBoolean();
 
-        //new Warrior(Character.randomName, Character.randomId, getHp(), Character.randomIsAlive, getStamina(), getStrength());
+        var randomHp = random.nextDouble(MINIMUM_HP, MAXIMUM_HP);
+        var randomStamina = random.nextInt(MINIMUM_STAMINA, MAXIMUM_STAMINA);
+        var randomStrength = random.nextInt(MINIMUM_STRENGTH, MINIMUM_STRENGTH);
 
-        System.out.println(new Warrior(Character.randomName, Character.randomId, getHp(), Character.randomIsAlive, getStamina(), getStrength()));
-       // return new Warrior(Character.randomName, Character.randomId, getHp(), Character.randomIsAlive, getStamina(), getStrength());
+        return new Warrior(randomName, randomId, randomHp, randomIsAlive, randomStamina, randomStrength);
     }
-/*
-    public Warrior gettingWarrior(){
-        Random num = new Random();
 
-        setHp(Math.floor(num.nextDouble(MINIMUM_HP,MAXIMUM_HP) * 100 / 100));
-        setStamina((int) num.nextDouble(MINIMUM_STAMINA,MAXIMUM_STAMINA));
-        setStrength((int) num.nextDouble(MINIMUM_STRENGTH,MAXIMUM_STRENGTH));
+    /*
+        public Warrior gettingWarrior(){
+            Random num = new Random();
 
-        return new Warrior(Character.generatedCharacter().getName(), Character.generatedCharacter().getId(), getHp(), Character.generatedCharacter().getIsAlive(), getStamina(), getStrength());
-    }
-*/
+            setHp(Math.floor(num.nextDouble(MINIMUM_HP,MAXIMUM_HP) * 100 / 100));
+            setStamina((int) num.nextDouble(MINIMUM_STAMINA,MAXIMUM_STAMINA));
+            setStrength((int) num.nextDouble(MINIMUM_STRENGTH,MAXIMUM_STRENGTH));
+
+            return new Warrior(Character.generatedCharacter().getName(), Character.generatedCharacter().getId(), getHp(), Character.generatedCharacter().getIsAlive(), getStamina(), getStrength());
+        }
+    */
     @Override
     public String toString() {
         return "Warrior{" +
