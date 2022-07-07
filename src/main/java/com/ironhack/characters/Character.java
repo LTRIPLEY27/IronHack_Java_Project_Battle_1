@@ -1,12 +1,19 @@
 package com.ironhack.characters;
 
-public abstract class Character {
-    private String name;
-    private int id;
-    private double hp;
-    private boolean isAlive;
+import net.datafaker.Faker;
 
-    public Character(String name, int id, double hp, boolean isAlive) {
+import java.util.Random;
+import java.util.UUID;
+
+public abstract class Character {
+    protected String name;
+    protected String id;
+    protected double hp;
+    protected boolean isAlive;
+
+    public static final String SUFFIX_NAME = " Jr";
+    
+    public Character(String name, String id, double hp, boolean isAlive) {
         setId(id);
         setName(name);
         setHp(hp);
@@ -21,13 +28,14 @@ public abstract class Character {
         this.name = name;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
+
 
     public double getHp() {
         return hp;
@@ -37,7 +45,7 @@ public abstract class Character {
         this.hp = hp;
     }
 
-    public boolean isAlive() {
+    public boolean getIsAlive() {
         return isAlive;
     }
 
@@ -46,4 +54,18 @@ public abstract class Character {
     }
 
     public abstract double attack();
+    
+    public static String generateId() {
+        return UUID.randomUUID().toString();
+    }
+
+    @Override
+    public String toString() {
+        return "Character{" +
+                "name='" + name + '\'' +
+                ", id='" + id + '\'' +
+                ", hp=" + hp +
+                ", isAlive=" + isAlive +
+                '}';
+    }
 }

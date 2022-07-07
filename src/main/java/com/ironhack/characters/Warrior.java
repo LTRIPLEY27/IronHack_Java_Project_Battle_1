@@ -1,5 +1,10 @@
 package com.ironhack.characters;
 
+import net.datafaker.Faker;
+
+import java.util.Random;
+import java.util.UUID;
+
 public class Warrior extends Character {
 
     public static final int STAMINA_ATTACK_THRESHOLD = 5;
@@ -10,11 +15,19 @@ public class Warrior extends Character {
     private int stamina;
     private int strength;
 
-    public Warrior(String name, int id, double hp, boolean isAlive, int stamina, int strength) {
+    private static final int MINIMUM_STAMINA = 10;
+    private static final int MAXIMUM_STAMINA = 50;
+    private static final int MINIMUM_HP = 100;
+    private static final int MAXIMUM_HP = 200;
+    private static final int MAXIMUM_STRENGTH = 10;
+    private static final int MINIMUM_STRENGTH = 1;
+
+    public Warrior(String name, String id, double hp, boolean isAlive, int stamina, int strength) {
         super(name, id, hp, isAlive);
         setStamina(stamina);
         setStrength(strength);
     }
+
 
     public int getStamina() {
         return stamina;
@@ -27,6 +40,7 @@ public class Warrior extends Character {
     public int getStrength() {
         return strength;
     }
+
 
     public void setStrength(int strength) {
         this.strength = strength;
@@ -45,5 +59,32 @@ public class Warrior extends Character {
             // Weak attack -> return DMG == 0.5 * Strength
             return  WEAK_ATTACK_MULTIPLIER * getStrength();
         }
+    }
+      
+    public static Warrior generateRandom() {
+        Random random = new Random();
+        var faker = new Faker();
+
+        var randomName = faker.name().firstName();
+        var randomId = Character.generateId();
+        var randomIsAlive = random.nextBoolean();
+
+        var randomHp = random.nextDouble(MINIMUM_HP, MAXIMUM_HP);
+        var randomStamina = random.nextInt(MINIMUM_STAMINA, MAXIMUM_STAMINA);
+        var randomStrength = random.nextInt(MINIMUM_STRENGTH, MINIMUM_STRENGTH);
+
+        return new Warrior(randomName, randomId, randomHp, randomIsAlive, randomStamina, randomStrength);
+    }
+
+    @Override
+    public String toString() {
+        return "Warrior{" +
+                "name='" + name + '\'' +
+                ", id='" + id + '\'' +
+                ", hp=" + hp +
+                ", isAlive=" + isAlive +
+                "stamina=" + stamina +
+                ", strength=" + strength +
+                '}';
     }
 }
