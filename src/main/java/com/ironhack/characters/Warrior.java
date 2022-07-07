@@ -56,17 +56,6 @@ public class Warrior extends Character {
         return new Warrior(randomName, randomId, randomHp, randomIsAlive, randomStamina, randomStrength);
     }
 
-    /*
-        public Warrior gettingWarrior(){
-            Random num = new Random();
-
-            setHp(Math.floor(num.nextDouble(MINIMUM_HP,MAXIMUM_HP) * 100 / 100));
-            setStamina((int) num.nextDouble(MINIMUM_STAMINA,MAXIMUM_STAMINA));
-            setStrength((int) num.nextDouble(MINIMUM_STRENGTH,MAXIMUM_STRENGTH));
-
-            return new Warrior(Character.generatedCharacter().getName(), Character.generatedCharacter().getId(), getHp(), Character.generatedCharacter().getIsAlive(), getStamina(), getStrength());
-        }
-    */
     @Override
     public String toString() {
         return "Warrior{" +
