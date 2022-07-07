@@ -1,6 +1,7 @@
 package com.ironhack.ui;
 
 import com.ironhack.Graveyard;
+import com.ironhack.characters.Character;
 import com.ironhack.characters.Warrior;
 import com.ironhack.characters.Wizard;
 
@@ -13,6 +14,7 @@ public class Menu {
     private final Scanner scanner = new Scanner(System.in);
 
     public void main() {
+        System.out.println(Character.generatedCharacter());
         String input;
         do {
             var mainMenu = """

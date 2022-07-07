@@ -21,12 +21,7 @@ public class Warrior extends Character {
     private final int MAXIMUM_STRENGTH = 10;
     private final int MINIMUM_STRENGTH = 1;
 
-    public Warrior(){
-
-    }
-
-
-    public Warrior(String name, int id, double hp, boolean isAlive, int stamina, int strength) {
+    public Warrior(String name, String id, double hp, boolean isAlive, int stamina, int strength) {
         super(name, id, hp, isAlive);
         setStamina(stamina);
         setStrength(strength);
@@ -64,5 +59,17 @@ public class Warrior extends Character {
             // Weak attack -> return DMG == 0.5 * Strength
             return  WEAK_ATTACK_MULTIPLIER * getStrength();
         }
+    }
+*/
+    @Override
+    public String toString() {
+        return "Warrior{" +
+                "name='" + name + '\'' +
+                ", id='" + id + '\'' +
+                ", hp=" + hp +
+                ", isAlive=" + isAlive +
+                "stamina=" + stamina +
+                ", strength=" + strength +
+                '}';
     }
 }

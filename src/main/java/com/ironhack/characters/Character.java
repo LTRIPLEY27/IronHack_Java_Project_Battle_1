@@ -2,6 +2,8 @@ package com.ironhack.characters;
 
 import net.datafaker.Faker;
 
+import java.util.Random;
+
 public abstract class Character {
     protected String name;
     protected int id;
