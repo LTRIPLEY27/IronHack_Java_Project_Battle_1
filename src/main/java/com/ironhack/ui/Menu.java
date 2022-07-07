@@ -9,12 +9,9 @@ import java.util.Scanner;
 
 public class Menu {
 
-
-
     private final Scanner scanner = new Scanner(System.in);
 
     public void main() {
-        System.out.println(Character.generatedCharacter());
         String input;
         do {
             var mainMenu = """
@@ -42,7 +39,6 @@ public class Menu {
                 default -> printWithColor("Command not recognized!", ConsoleColors.RED);
             }
         } while (!input.equals("exit"));
-        testAttacks();
     }
 
     private void createWizard() {
@@ -50,9 +46,7 @@ public class Menu {
     }
 
     private void randomWizard() {
-        Wizard lizard = new Wizard();
-        lizard.randomCharacter();
-        System.out.println(lizard.toString());
+
     }
 
     private void createWarrior() {
@@ -60,9 +54,9 @@ public class Menu {
     }
 
     private void randomWarrior() {
-        Warrior warlock = new Warrior();
-        warlock.randomCharacter();
-        System.out.println(warlock.toString());
+        Warrior warlock = null;
+
+
     }
 
     //SOLO A MODO DE PRUEBA, EDITAR EN LA CLASE GRAVEYARD
@@ -72,17 +66,10 @@ public class Menu {
         var Merlin = new Wizard("Merlin", "3", 200, true, 500, 100);
         var VatoLoco = new Warrior("Vato Loco", "3", 200, true, 500, 100);
 
-        Wizard wizard1 = new Wizard("Merlin", 3, 200, true, 6, 100);
-        Wizard wizard2 = new Wizard("Merlin", 3, 200, true, 2, 100);
-        Character warrior1 = new Warrior("Vato Loco", 3, 200, true, 7, 100);
-        Character warrior2 = new Warrior("Vato Loco", 3, 200, true, 3, 100);
+        graveyard.addDeadCharacter(Merlin);
+        graveyard.addDeadCharacter(VatoLoco);
 
-        System.out.println("\n\nTesting attack methods\n");
-        System.out.printf("wizard high mana attack value: %s - mana after: %s\n", wizard1.attack(), wizard1.getMana());
-        System.out.printf("wizard low mana attack value: %s - mana after: %s\n", wizard2.attack(), wizard2.getMana());
-        System.out.printf("warrior high stamina attack value: %s - stamina after: %s\n", warrior1.attack(), ((Warrior) warrior1).getStamina());
-        System.out.printf("warrior low stamina attack value: %s - stamina after: %s\n\n", warrior2.attack(), ((Warrior) warrior2).getStamina());
-
+        graveyard.showGraveyard();
     }
 
     public void printWithColor(String text, String color){

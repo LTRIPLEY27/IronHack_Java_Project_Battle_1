@@ -3,22 +3,20 @@ package com.ironhack.characters;
 import net.datafaker.Faker;
 
 import java.util.Random;
+import java.util.UUID;
 
 public abstract class Character {
     protected String name;
-    protected int id;
-    protected double hp;// VERIFICAR SI ES DOUBLE O INTEGER
+    protected String id;
+    protected double hp;
     protected boolean isAlive;
 
-    public static final String SUFFIX_NAME = " Jr";
-    public Character(String name, int id, double hp, boolean isAlive) {
+    public Character(String name, String id, double hp, boolean isAlive) {
         setId(id);
         setName(name);
         setHp(hp);
         setAlive(isAlive);
     }
-
-
 
     public String getName() {
         return name;
@@ -28,16 +26,11 @@ public abstract class Character {
         this.name = name;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    //RANDOM
-    public void setId() {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -57,9 +50,6 @@ public abstract class Character {
     public void setAlive(boolean alive) {
         isAlive = alive;
     }
-    public abstract Character randomCharacter();
-
-    public abstract double attack();
 
     public static String generateId() {
         return UUID.randomUUID().toString();

@@ -46,31 +46,32 @@ public class Warrior extends Character {
         this.strength = strength;
     }
 
-    //public Warrior gettingWarrior() {
-    public void gettingWarrior() {
-        Random num = new Random();
+    public static Warrior generateRandom() {
+        Random random = new Random();
+        var faker = new Faker();
 
-        setHp(Math.floor(num.nextDouble(MINIMUM_HP,MAXIMUM_HP) * 100 / 100));
-        setStamina((int) num.nextDouble(MINIMUM_STAMINA,MAXIMUM_STAMINA));
-        setStrength((int) num.nextDouble(MINIMUM_STRENGTH,MAXIMUM_STRENGTH));
+        var randomName = faker.name().firstName();
+        var randomId = Character.generateId();
+        var randomIsAlive = random.nextBoolean();
 
-        //new Warrior(Character.randomName, Character.randomId, getHp(), Character.randomIsAlive, getStamina(), getStrength());
+        var randomHp = random.nextDouble(MINIMUM_HP, MAXIMUM_HP);
+        var randomStamina = random.nextInt(MINIMUM_STAMINA, MAXIMUM_STAMINA);
+        var randomStrength = random.nextInt(MINIMUM_STRENGTH, MINIMUM_STRENGTH);
 
-    @Override
-    public double attack() {
-        if (getStamina() >= STAMINA_ATTACK_THRESHOLD) {
-            // -5 stamina
-            setStamina(getStamina() + HEAVY_ATTACK_STAMINA_USAGE);
-            // Heavy attack -> return DMG == Strength
-            return getStrength();
-        } else {
-            // +1 stamina
-            setStamina(getStamina() + WEAK_ATTACK_STAMINA_USAGE);
-            // Weak attack -> return DMG == 0.5 * Strength
-            return  WEAK_ATTACK_MULTIPLIER * getStrength();
-        }
+        return new Warrior(randomName, randomId, randomHp, randomIsAlive, randomStamina, randomStrength);
     }
-*/
+
+    /*
+        public Warrior gettingWarrior(){
+            Random num = new Random();
+
+            setHp(Math.floor(num.nextDouble(MINIMUM_HP,MAXIMUM_HP) * 100 / 100));
+            setStamina((int) num.nextDouble(MINIMUM_STAMINA,MAXIMUM_STAMINA));
+            setStrength((int) num.nextDouble(MINIMUM_STRENGTH,MAXIMUM_STRENGTH));
+
+            return new Warrior(Character.generatedCharacter().getName(), Character.generatedCharacter().getId(), getHp(), Character.generatedCharacter().getIsAlive(), getStamina(), getStrength());
+        }
+    */
     @Override
     public String toString() {
         return "Warrior{" +
