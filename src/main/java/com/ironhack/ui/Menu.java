@@ -10,6 +10,7 @@ import java.util.Scanner;
 public class Menu {
 
     private final Scanner scanner = new Scanner(System.in);
+    private final Graveyard graveyard = new Graveyard();
 
     public void main() {
         String input;
@@ -52,23 +53,8 @@ public class Menu {
     private void createWarrior() {
 
     }
-
-    private void randomWarrior() {
-        Warrior warlock = null;
-
-
-    }
-
-    //SOLO A MODO DE PRUEBA, EDITAR EN LA CLASE GRAVEYARD
+    
     private void showGraveyard() {
-        Graveyard graveyard = new Graveyard();
-
-        var Merlin = new Wizard("Merlin", "3", 200, true, 500, 100);
-        var VatoLoco = new Warrior("Vato Loco", "3", 200, true, 500, 100);
-
-        graveyard.addDeadCharacter(Merlin);
-        graveyard.addDeadCharacter(VatoLoco);
-
         graveyard.showGraveyard();
     }
 
