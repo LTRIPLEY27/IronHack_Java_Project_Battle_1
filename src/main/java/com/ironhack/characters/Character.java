@@ -53,6 +53,8 @@ public abstract class Character {
         isAlive = alive;
     }
 
+    public abstract double attack();
+    
     public static String generateId() {
         return UUID.randomUUID().toString();
     }

@@ -7,6 +7,11 @@ import java.util.UUID;
 
 public class Warrior extends Character {
 
+    public static final int STAMINA_ATTACK_THRESHOLD = 5;
+    public static final int HEAVY_ATTACK_STAMINA_USAGE = -5;
+    public static final int WEAK_ATTACK_STAMINA_USAGE = 1;
+    public static final double WEAK_ATTACK_MULTIPLIER = 0.5;
+
     private int stamina;
     private int strength;
 
@@ -41,6 +46,21 @@ public class Warrior extends Character {
         this.strength = strength;
     }
 
+    @Override
+    public double attack() {
+        if (getStamina() >= STAMINA_ATTACK_THRESHOLD) {
+            // -5 stamina
+            setStamina(getStamina() + HEAVY_ATTACK_STAMINA_USAGE);
+            // Heavy attack -> return DMG == Strength
+            return getStrength();
+        } else {
+            // +1 stamina
+            setStamina(getStamina() + WEAK_ATTACK_STAMINA_USAGE);
+            // Weak attack -> return DMG == 0.5 * Strength
+            return  WEAK_ATTACK_MULTIPLIER * getStrength();
+        }
+    }
+      
     public static Warrior generateRandom() {
         Random random = new Random();
         var faker = new Faker();
