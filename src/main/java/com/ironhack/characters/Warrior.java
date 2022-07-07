@@ -16,10 +16,6 @@ public class Warrior extends Character {
     private final int MAXIMUM_STRENGTH = 10;
     private final int MINIMUM_STRENGTH = 1;
 
-    public Warrior(){
-
-    }
-
     public Warrior(String name, String id, double hp, boolean isAlive, int stamina, int strength) {
         super(name, id, hp, isAlive);
         setStamina(stamina);
@@ -44,22 +40,20 @@ public class Warrior extends Character {
         this.strength = strength;
     }
 
-
-    /*@Override
-    public Character randomCharacter() {
-        var faker = new Faker();
+    //public Warrior gettingWarrior() {
+    public void gettingWarrior() {
         Random num = new Random();
 
-        super.setName(faker.name().firstName());
-        super.setId(faker.idNumber().valid());
-        super.setHp(Math.floor(num.nextDouble(MINIMUM_HP,MAXIMUM_HP) * 100 / 100));
-        super.setAlive(true);
+        setHp(Math.floor(num.nextDouble(MINIMUM_HP,MAXIMUM_HP) * 100 / 100));
         setStamina((int) num.nextDouble(MINIMUM_STAMINA,MAXIMUM_STAMINA));
         setStrength((int) num.nextDouble(MINIMUM_STRENGTH,MAXIMUM_STRENGTH));
 
-        return new Warrior(super.getName(), super.getId(), super.getHp(), super.getIsAlive(), getStamina(), getStrength());
-    }*/
+        //new Warrior(Character.randomName, Character.randomId, getHp(), Character.randomIsAlive, getStamina(), getStrength());
 
+        System.out.println(new Warrior(Character.randomName, Character.randomId, getHp(), Character.randomIsAlive, getStamina(), getStrength()));
+       // return new Warrior(Character.randomName, Character.randomId, getHp(), Character.randomIsAlive, getStamina(), getStrength());
+    }
+/*
     public Warrior gettingWarrior(){
         Random num = new Random();
 
@@ -69,8 +63,8 @@ public class Warrior extends Character {
 
         return new Warrior(Character.generatedCharacter().getName(), Character.generatedCharacter().getId(), getHp(), Character.generatedCharacter().getIsAlive(), getStamina(), getStrength());
     }
-
-    /*@Override
+*/
+    @Override
     public String toString() {
         return "Warrior{" +
                 "name='" + name + '\'' +
@@ -80,5 +74,5 @@ public class Warrior extends Character {
                 "stamina=" + stamina +
                 ", strength=" + strength +
                 '}';
-    }*/
+    }
 }

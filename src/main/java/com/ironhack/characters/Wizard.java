@@ -4,6 +4,8 @@ import net.datafaker.Faker;
 
 import java.util.Random;
 
+import static com.ironhack.characters.Character.randomHp;
+
 public class Wizard extends Character{
 
     private int mana;
@@ -14,8 +16,6 @@ public class Wizard extends Character{
     private final int MAXIMUM_INTELLIGENCE = 50;
     private final int MINIMUM_MANA = 10;
     private final int MAXIMUM_MANA = 50;
-
-    public  Wizard(){}
 
     public Wizard(String name, String id, double hp, boolean isAlive, int mana, int intelligence) {
         super(name, id, hp, isAlive);
@@ -75,7 +75,11 @@ public class Wizard extends Character{
         setMana((int) num.nextDouble(MINIMUM_MANA,MAXIMUM_MANA));
         setIntelligence((int) num.nextDouble(MINIMUM_INTELLIGENCE,MAXIMUM_INTELLIGENCE));
 
-        return new Wizard(Character.generatedCharacter().getName(), Character.generatedCharacter().getId(), getHp(), Character.generatedCharacter().getIsAlive(), getMana(), getIntelligence());
+        Character.randomCharacter();
+        return new Wizard(Character.randomName, Character.randomId, getHp(), Character.randomIsAlive, getMana(), getIntelligence());
+
     }
+
+
 
 }

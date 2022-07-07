@@ -6,11 +6,15 @@ import java.util.Random;
 
 public abstract class Character {
     protected String name;
+    protected static  String randomName;
     protected String id;
+    protected static String randomId;
     protected double hp;
+    protected static double randomHp;
     protected boolean isAlive;
+    protected static boolean randomIsAlive;
 
-    public Character() {}
+    //public Character() {}
 
     public Character(String name, String id, double hp, boolean isAlive) {
         setId(id);
@@ -52,35 +56,19 @@ public abstract class Character {
         isAlive = alive;
     }
 
-    public void randomCharacter() {
-    }
-
-    public static Character generatedCharacter() {
-        Character character = new Character() {
-            public void randomCharacter() {
-                /*var faker = new Faker();
-                Random num = new Random();
-
-                setName(faker.name().firstName());
-                setId(faker.idNumber().valid());
-                setHp(0);
-                setAlive(true);*/
-
-            }
-
-        };
-
-        var faker = new Faker();
+    public static void randomCharacter() {
         Random num = new Random();
+        var faker = new Faker();
 
-        character.setName(faker.name().firstName());
-        character.setId(faker.idNumber().valid());
-        character.setHp(0);
-        character.setAlive(true);
+        randomName = faker.name().firstName();
+        randomId = faker.idNumber().valid();
+        randomHp = 0;
+        randomIsAlive = true;
 
-        return character;
-
+        System.out.println(randomName);
+        System.out.println(randomId);
     }
+
 
     @Override
     public String toString() {

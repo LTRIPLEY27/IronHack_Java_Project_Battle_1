@@ -12,7 +12,6 @@ public class Menu {
     private final Scanner scanner = new Scanner(System.in);
 
     public void main() {
-        System.out.println(Character.generatedCharacter());
         String input;
         do {
             var mainMenu = """
@@ -47,8 +46,9 @@ public class Menu {
     }
 
     private void randomWizard() {
-        Wizard lizard = new Wizard();
-        //lizard.randomCharacter();
+        Character.randomCharacter();
+        Wizard lizard = null;
+        lizard.gettingWizard();
         System.out.println(lizard.gettingWizard());
     }
 
@@ -57,8 +57,11 @@ public class Menu {
     }
 
     private void randomWarrior() {
-        Warrior warlock = new Warrior();
-        System.out.println(warlock.gettingWarrior());
+        Warrior warlock = null;
+        warlock.gettingWarrior();
+
+        //System.out.println(warlock.gettingWarrior());
+
     }
 
     //SOLO A MODO DE PRUEBA, EDITAR EN LA CLASE GRAVEYARD
