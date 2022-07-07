@@ -11,16 +11,85 @@ import java.util.ArrayList;
  * dead characters go.
  */
 public class Graveyard {
-    ArrayList<Wizard> deadWizards;
-    ArrayList<Warrior> deadWarriors;
+    ArrayList<Character> deadCharacters;
+    int wizardCount = 0;
+    int warriorCount = 0;
+    int othersCount = 0;
+    int totalBodies = 0;
 
     //com.ironhack.Graveyard constructor
     public Graveyard() {
-        this.deadWizards = new ArrayList<Wizard>();
-        this.deadWarriors = new ArrayList<Warrior>();
-        System.out.println("The com.ironhack.Graveyard has been created... 🪦");
-        System.out.println("no bodies have been buried yet...  ");
+        this.deadCharacters = new ArrayList<Character>();
+        System.out.println("The Graveyard has been created... 🪦🪦🪦");
+        System.out.println("... ... no bodies have been buried yet... 🕊 ");
+        System.out.println("🕸...🕷..... 🕸\n");
+    }
 
+    public void addDeadCharacter(Character deadCharacter) {
+        deadCharacters.add(deadCharacter);
+        if (deadCharacter instanceof Wizard) {
+            System.out.println("🧙‍ "+deadCharacter.getName() + "'s magic is over. A magical soul is now moving to the other world 🪦");
+            wizardCount++;
+        }else if (deadCharacter instanceof Warrior){
+            System.out.println("💂‍ " + deadCharacter.getName()+" is dead. A legendary fighter has past away 🪦");
+            warriorCount++;
+        }else{
+            System.out.println("💂‍ " + deadCharacter.getName()+" is dead. who was this person? 🪦");
+            othersCount++;
+        }
+        totalBodies = wizardCount + warriorCount + othersCount;
+    }
+
+    public void showGraveyard(){
+        System.out.println("\n✝✝✝🪦GRAVEYARD🪦✝✝✝");
+        System.out.println("✝✝✝✝✝✝✝✝✝✝✝✝✝✝✝✝✝✝✝");
+
+        if (deadCharacters.isEmpty()){
+            System.out.println("the graveyard is empty 🕊");
+        }else{
+            for (Character character : deadCharacters) {
+                if (character instanceof Wizard) {
+                    System.out.println("🪦 " + character.getName() + " lies here. 🧙‍");
+                }else if (character instanceof Warrior){
+                    System.out.println("🪦 " + character.getName()+" lies here. 💂‍");
+                }else{
+                    System.out.println("🪦 " + character.getName()+" lies here. 💀");
+                }
+            }
+        }
+        System.out.println("✝✝✝✝✝✝✝✝✝✝✝✝✝✝✝✝✝");
+    }
+
+    public void showGraveyardByClass(){
+        System.out.println("\n✝✝✝🪦GRAVEYARD🪦✝✝✝");
+        System.out.println("✝✝✝✝✝✝✝✝✝✝✝✝✝✝✝✝✝✝✝");
+
+        if (deadCharacters.isEmpty()) {
+            System.out.println("the graveyard is empty 🕊");
+
+        } else {
+            System.out.println("... in the Graveyard are "+ totalBodies+" bodies buried...");
+            System.out.println("🪦...🪦.........🪦...🪦🪦🪦......🪦");
+
+            if (wizardCount!=0){
+                System.out.println("\nThe Graveyard has "+wizardCount+" dead wizards...");
+                for (Character character : deadCharacters) {
+                    if (character instanceof Wizard) {System.out.println("🪦 " + character.getName() + " lies here. 🧙‍");}
+                }
+            }
+            if (warriorCount!=0) {
+                System.out.println("\nThe Graveyard has "+warriorCount+" dead warriors...");
+                for (Character character : deadCharacters) {
+                    if (character instanceof Warrior) {System.out.println("🪦 " + character.getName() + " lies here. 💂‍");}
+                }
+            }
+            if (othersCount!=0) {
+                for (Character character : deadCharacters) {
+                    if (!(character instanceof Warrior) && !(character instanceof Wizard)) {System.out.println("🪦 " + character.getName() + " lies here. 💀");}
+                }
+            }
+        }
+        System.out.println("✝✝✝✝✝✝✝✝✝✝✝✝✝✝✝✝✝");
     }
 
     /**
@@ -29,25 +98,19 @@ public class Graveyard {
     public static void test(){
         Graveyard graveyard = new Graveyard();
 
-        var Merlin = new Wizard("Merlin", "3", 200, true, 500, 100);
-        var VatoLoco = new Warrior("Vato Loco", "3", 200, true, 500, 100);
+        var Merlin = new Wizard("Merlin", 3, 200, true, 500, 100);
+        var VatoLoco = new Warrior("Vato Loco", 3, 200, true, 500, 100);
 
         graveyard.addDeadCharacter(Merlin);
         graveyard.addDeadCharacter(VatoLoco);
+        graveyard.addDeadCharacter(Johnny);
+        graveyard.addDeadCharacter(Maria);
+        graveyard.addDeadCharacter(Paco);
+        graveyard.addDeadCharacter(Hugo);
+
 
         graveyard.showGraveyard();
-    }
-
-
-    /**
-     * showGraveyard() shows the current state of the com.ironhack.Graveyard
-     * revealing if there are any dead wizards or warriors
-     * burried in it.
-     */
-    public void showGraveyard(){
-
-        System.out.println("✝✝✝✝✝✝✝✝✝✝✝✝✝✝✝✝✝");
-        System.out.println("DEADWIZARDS: ");
+        graveyard.showGraveyardByClass();
 
         if (deadWizards.isEmpty()){
             System.out.println("none");
