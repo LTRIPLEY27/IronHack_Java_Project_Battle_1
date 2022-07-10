@@ -67,11 +67,10 @@ public class Warrior extends Character {
 
         var randomName = faker.name().firstName();
         var randomId = Character.generateId();
-        var randomIsAlive = random.nextBoolean();
-
-        var randomHp = random.nextDouble(MINIMUM_HP, MAXIMUM_HP);
+        var randomIsAlive =   true;//random.nextBoolean();  --> EN EL MÉTODO RANDOM A VECES INICIA COMO TRU, INDICÁNDO MUERTE SIN JUGAR
+        var randomHp = Math.floor(random.nextDouble(MINIMUM_HP , MAXIMUM_HP) * 100 / 100);
         var randomStamina = random.nextInt(MINIMUM_STAMINA, MAXIMUM_STAMINA);
-        var randomStrength = random.nextInt(MINIMUM_STRENGTH, MINIMUM_STRENGTH);
+        var randomStrength = random.nextInt(MINIMUM_STRENGTH, MAXIMUM_STRENGTH);
 
         return new Warrior(randomName, randomId, randomHp, randomIsAlive, randomStamina, randomStrength);
     }
@@ -79,12 +78,12 @@ public class Warrior extends Character {
     @Override
     public String toString() {
         return "Warrior{" +
-                "name='" + name + '\'' +
-                ", id='" + id + '\'' +
-                ", hp=" + hp +
-                ", isAlive=" + isAlive +
-                "stamina=" + stamina +
-                ", strength=" + strength +
-                '}';
+                "name= '" + name + '\'' +
+                ", id= '" + id + '\'' +
+                ", hp= " + hp +
+                ", isAlive=  " + isAlive +
+                ", stamina= " + stamina +
+                ", strength  =" + strength +
+                '}' + "\n";
     }
 }

@@ -64,7 +64,7 @@ public class Wizard extends Character{
 
         var randomName = faker.name().firstName();
         var randomId = Character.generateId();
-        var randomIsAlive = random.nextBoolean();
+        var randomIsAlive =  true;  // random.nextBoolean();
         var randomHp = (Math.floor(random.nextDouble(MINIMUM_HP , MAXIMUM_HP) * 100 / 100));
         var mana = random.nextInt(MINIMUM_MANA,MAXIMUM_MANA);
         var intelligence = random.nextInt(MINIMUM_INTELLIGENCE,MAXIMUM_INTELLIGENCE);
@@ -73,4 +73,15 @@ public class Wizard extends Character{
 
     }
 
+    @Override
+    public String toString() {
+        return "Wizard{" +
+                "name= " + name + '\'' +
+                ", id= " + id + '\'' +
+                ", hp= " + hp +
+                ", isAlive= " + isAlive +
+                ", mana= " + mana +
+                ", intelligence= " + intelligence +
+                '}' + "\n";
+    }
 }

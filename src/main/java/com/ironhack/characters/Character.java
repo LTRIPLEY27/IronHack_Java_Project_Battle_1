@@ -59,13 +59,4 @@ public abstract class Character {
         return UUID.randomUUID().toString();
     }
 
-    @Override
-    public String toString() {
-        return "Character{" +
-                "name='" + name + '\'' +
-                ", id='" + id + '\'' +
-                ", hp=" + hp +
-                ", isAlive=" + isAlive +
-                '}';
-    }
 }

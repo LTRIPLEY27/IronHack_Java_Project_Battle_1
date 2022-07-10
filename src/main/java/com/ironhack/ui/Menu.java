@@ -1,6 +1,7 @@
 package com.ironhack.ui;
 
 import com.ironhack.Graveyard;
+import com.ironhack.Party;
 import com.ironhack.characters.Character;
 import com.ironhack.characters.Warrior;
 import com.ironhack.characters.Wizard;
@@ -23,6 +24,7 @@ public class Menu {
                     [2] - Random Warrior
                     [3] - Random Wizard
                     [4] - Show Graveyard
+                    [5] - Random Party
                     
                     [exit] - Exit Battle Simulator
                     ===============
@@ -36,6 +38,7 @@ public class Menu {
                 case "2" -> randomWarrior();
                 case "3" -> randomWizard();
                 case "4" -> showGraveyard();
+                case "5" -> randomParty();
                 case "exit" -> printWithColor("Bye bye", ConsoleColors.GREEN);
                 default -> printWithColor("Command not recognized!", ConsoleColors.RED);
             }
@@ -46,12 +49,23 @@ public class Menu {
 
     }
 
+    private void createWarrior() {
+        System.out.println(Warrior.generateRandom());
+    }
+
     private void randomWizard() {
+        System.out.println(Wizard.generateRandom());
+    }
+
+    private void randomWarrior() {
 
     }
 
-    private void createWarrior() {
-
+    private void randomParty() {
+        //Party part = new Party();
+        System.out.println("Indique cuántos miembros");
+        int num = scanner.nextInt();
+        System.out.println(Party.getRandomParty(num));  // --- > VERIFICAR SI DEJAMOS O NO EL MÈTODO COMO ESTÁTICO
     }
     
     private void showGraveyard() {
