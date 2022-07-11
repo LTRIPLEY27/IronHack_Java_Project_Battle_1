@@ -1,10 +1,13 @@
 package com.ironhack.ui;
 
+import com.ironhack.Graveyard;
+import com.ironhack.characters.Character;
+import com.ironhack.characters.Warrior;
+import com.ironhack.characters.Wizard;
+
 import java.util.Scanner;
 
 public class Menu {
-
-    
 
     private final Scanner scanner = new Scanner(System.in);
     private final Graveyard graveyard = new Graveyard();
@@ -51,6 +54,10 @@ public class Menu {
 
     }
 
+    private void showGraveyard() {
+        graveyard.showGraveyard();
+    }
+
     private void randomWarrior() {
         Warrior warlock = null;
 
@@ -73,5 +80,6 @@ public class Menu {
     public void printWithColor(String text, String color){
         System.out.println(color + text + ConsoleColors.RESET);
     }
+
 
 }

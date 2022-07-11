@@ -1,15 +1,9 @@
 package com.ironhack;
-
+import com.ironhack.characters.Character;
 import com.ironhack.characters.Wizard;
 import com.ironhack.characters.Warrior;
-
 import java.util.ArrayList;
 
-
-/**
- * This is a class to create a com.ironhack.Graveyard. The place where all
- * dead characters go.
- */
 public class Graveyard {
     ArrayList<Character> deadCharacters;
     int wizardCount = 0;
@@ -17,7 +11,6 @@ public class Graveyard {
     int othersCount = 0;
     int totalBodies = 0;
 
-    //com.ironhack.Graveyard constructor
     public Graveyard() {
         this.deadCharacters = new ArrayList<Character>();
         System.out.println("The Graveyard has been created... 🪦🪦🪦");
@@ -92,14 +85,21 @@ public class Graveyard {
         System.out.println("✝✝✝✝✝✝✝✝✝✝✝✝✝✝✝✝✝");
     }
 
-    /**
-     * This method is just for testing the functionality of the com.ironhack.Graveyard
-     */
+
+
+    /*************************************************
+     * TEST
+     *************************************************/
     public static void test(){
         Graveyard graveyard = new Graveyard();
 
         var Merlin = new Wizard("Merlin", 3, 200, true, 500, 100);
         var VatoLoco = new Warrior("Vato Loco", 3, 200, true, 500, 100);
+        var Johnny = new Warrior("Johnny", 3, 200, true, 500, 100);
+        var Maria = new Wizard("Maria", 3, 200, true, 500, 100);
+        var Paco = new Warrior("Paco", 3, 200, true, 500, 100);
+        var Hugo = new Warrior("Hugo", 3, 200, true, 500, 100);
+
 
         graveyard.addDeadCharacter(Merlin);
         graveyard.addDeadCharacter(VatoLoco);

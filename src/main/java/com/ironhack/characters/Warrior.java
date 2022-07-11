@@ -46,6 +46,21 @@ public class Warrior extends Character {
         this.strength = strength;
     }
 
+    @Override
+    public double attack() {
+        if (getStamina() >= STAMINA_ATTACK_THRESHOLD) {
+            // -5 stamina
+            setStamina(getStamina() + HEAVY_ATTACK_STAMINA_USAGE);
+            // Heavy attack -> return DMG == Strength
+            return getStrength();
+        } else {
+            // +1 stamina
+            setStamina(getStamina() + WEAK_ATTACK_STAMINA_USAGE);
+            // Weak attack -> return DMG == 0.5 * Strength
+            return  WEAK_ATTACK_MULTIPLIER * getStrength();
+        }
+    }
+
     public static Warrior generateRandom() {
         Random random = new Random();
         var faker = new Faker();

@@ -11,6 +11,8 @@ public abstract class Character {
     protected double hp;
     protected boolean isAlive;
 
+    public static final String SUFFIX_NAME = " Jr";
+
     public Character(String name, String id, double hp, boolean isAlive) {
         setId(id);
         setName(name);
@@ -50,6 +52,8 @@ public abstract class Character {
     public void setAlive(boolean alive) {
         isAlive = alive;
     }
+
+    public abstract double attack();
 
     public static String generateId() {
         return UUID.randomUUID().toString();
