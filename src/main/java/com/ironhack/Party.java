@@ -30,7 +30,7 @@ public class Party {
 
     public void membersParty() {
         for (Character member : members) {
-            System.out.println(member.getName());
+            System.out.println(member.toString());
         }
     }
 
