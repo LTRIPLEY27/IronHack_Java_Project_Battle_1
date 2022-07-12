@@ -61,7 +61,16 @@ public class Menu {
 
     }
 
+    //SOLO A MODO DE PRUEBA, EDITAR EN LA CLASE GRAVEYARD
     private void showGraveyard() {
+        Graveyard graveyard = new Graveyard();
+
+        var Merlin = new Wizard("Merlin", "3", 200, true, 500, 100);
+        var VatoLoco = new Warrior("Vato Loco", "3", 200, true, 500, 100);
+
+        graveyard.addDeadCharacter(Merlin);
+        graveyard.addDeadCharacter(VatoLoco);
+
         graveyard.showGraveyard();
     }
 

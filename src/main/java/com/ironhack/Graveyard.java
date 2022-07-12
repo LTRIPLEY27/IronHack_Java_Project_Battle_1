@@ -84,33 +84,4 @@ public class Graveyard {
         }
         System.out.println("✝✝✝✝✝✝✝✝✝✝✝✝✝✝✝✝✝");
     }
-
-
-
-    /*************************************************
-     * TEST
-     *************************************************/
-    public static void test(){
-        Graveyard graveyard = new Graveyard();
-
-        var Merlin = new Wizard("Merlin", Character.generateId(), 200, true, 500, 100);
-        var VatoLoco = new Warrior("Vato Loco", Character.generateId(), 200, true, 500, 100);
-        var Johnny = new Warrior("Johnny", Character.generateId(), 200, true, 500, 100);
-        var Maria = new Wizard("Maria", Character.generateId(), 200, true, 500, 100);
-        var Paco = new Warrior("Paco", Character.generateId(), 200, true, 500, 100);
-        var Hugo = new Warrior("Hugo", Character.generateId(), 200, true, 500, 100);
-
-
-        graveyard.addDeadCharacter(Merlin);
-        graveyard.addDeadCharacter(VatoLoco);
-        graveyard.addDeadCharacter(Johnny);
-        graveyard.addDeadCharacter(Maria);
-        graveyard.addDeadCharacter(Paco);
-        graveyard.addDeadCharacter(Hugo);
-
-
-        graveyard.showGraveyard();
-        graveyard.showGraveyardByClass();
-
-    }
 }

@@ -13,11 +13,11 @@ public abstract class Character {
 
     public static final String SUFFIX_NAME = " Jr";
     
-    public Character(String name, String id, double hp, boolean alive) {
+    public Character(String name, String id, double hp) {
         setId(id);
         setName(name);
         setHp(hp);
-        setAlive(alive);
+        setAlive(hp > HEALTH_DEATH_THRESHOLD);
     }
 
     public String getName() {
@@ -43,7 +43,7 @@ public abstract class Character {
 
     public void setHp(double hp) {
         this.hp = hp > HEALTH_DEATH_THRESHOLD ? hp : HEALTH_DEATH_THRESHOLD;
-        if(this.hp == HEALTH_DEATH_THRESHOLD) setAlive(false);
+        if(this.hp <= HEALTH_DEATH_THRESHOLD) setAlive(false);
     }
 
     public boolean isAlive() {
@@ -55,7 +55,7 @@ public abstract class Character {
     }
 
     public abstract double attack();
-    
+
     public static String generateId() {
         return UUID.randomUUID().toString();
     }

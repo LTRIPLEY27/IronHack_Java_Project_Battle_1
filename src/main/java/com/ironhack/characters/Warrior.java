@@ -59,7 +59,7 @@ public class Warrior extends Character {
             return  WEAK_ATTACK_MULTIPLIER * getStrength();
         }
     }
-      
+
     public static Warrior generateRandom() {
         Random random = new Random();
         var faker = new Faker();
