@@ -20,8 +20,8 @@ public class Wizard extends Character{
     private static final int MINIMUM_MANA = 10;
     private static final int MAXIMUM_MANA = 50;
 
-    public Wizard(String name, String id, double hp, boolean isAlive, int mana, int intelligence) {
-        super(name, id, hp, isAlive);
+    public Wizard(String name, String id, double hp,  int mana, int intelligence) {
+        super(name, id, hp);
         setMana(mana);
         setIntelligence(intelligence);
     }
@@ -64,12 +64,11 @@ public class Wizard extends Character{
 
         var randomName = faker.name().firstName();
         var randomId = Character.generateId();
-        var randomIsAlive =  true;  // random.nextBoolean();
         var randomHp = (Math.floor(random.nextDouble(MINIMUM_HP , MAXIMUM_HP) * 100 / 100));
         var mana = random.nextInt(MINIMUM_MANA,MAXIMUM_MANA);
         var intelligence = random.nextInt(MINIMUM_INTELLIGENCE,MAXIMUM_INTELLIGENCE);
 
-        return new Wizard(randomName, randomId, randomHp, randomIsAlive, mana, intelligence);
+        return new Wizard(randomName, randomId, randomHp, mana, intelligence);
 
     }
 
@@ -79,7 +78,7 @@ public class Wizard extends Character{
                 "name= " + name + '\'' +
                 ", id= " + id + '\'' +
                 ", hp= " + hp +
-                ", isAlive= " + isAlive +
+                ", isAlive= " + alive +
                 ", mana= " + mana +
                 ", intelligence= " + intelligence +
                 '}' + "\n";

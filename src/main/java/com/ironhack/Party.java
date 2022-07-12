@@ -42,9 +42,9 @@ public class Party {
     public static void test() {
         Party party = new Party();
 
-        Character Merlin = new Wizard("Merlin", "3", 1, true, 500, 100);
-        Character VatoLoco = new Warrior("Vato Loco", "3", 200, true, 500, 100);
-        Character VatoLoco2 = new Warrior("Vato Loco", "3", 200, true, 500, 100);
+        Character Merlin = new Wizard("Merlin", Character.generateId(), 1,  500, 100);
+        Character VatoLoco = new Warrior("Vato Loco", Character.generateId(), 200,  500, 100);
+        Character VatoLoco2 = new Warrior("Vato Loco", Character.generateId(), 200, 500, 100);
 
         party.addCharacter(Merlin);
         party.addCharacter(VatoLoco);
