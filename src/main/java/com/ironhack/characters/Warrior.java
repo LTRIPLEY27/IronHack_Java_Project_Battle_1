@@ -21,8 +21,8 @@ public class Warrior extends Character {
     private static final int MAXIMUM_STRENGTH = 10;
     private static final int MINIMUM_STRENGTH = 1;
 
-    public Warrior(String name, String id, double hp, boolean isAlive, int stamina, int strength) {
-        super(name, id, hp, isAlive);
+    public Warrior(String name, String id, double hp, int stamina, int strength) {
+        super(name, id, hp);
         setStamina(stamina);
         setStrength(strength);
     }
@@ -66,13 +66,11 @@ public class Warrior extends Character {
 
         var randomName = faker.name().firstName();
         var randomId = Character.generateId();
-        var randomIsAlive = random.nextBoolean();
-
-        var randomHp = random.nextDouble(MINIMUM_HP, MAXIMUM_HP);
+        var randomHp = Math.floor(random.nextDouble(MINIMUM_HP , MAXIMUM_HP) * 100 / 100);
         var randomStamina = random.nextInt(MINIMUM_STAMINA, MAXIMUM_STAMINA);
-        var randomStrength = random.nextInt(MINIMUM_STRENGTH, MINIMUM_STRENGTH);
+        var randomStrength = random.nextInt(MINIMUM_STRENGTH, MAXIMUM_STRENGTH);
 
-        return new Warrior(randomName, randomId, randomHp, randomIsAlive, randomStamina, randomStrength);
+        return new Warrior(randomName, randomId, randomHp, randomStamina, randomStrength);
     }
 
     @Override
@@ -84,6 +82,6 @@ public class Warrior extends Character {
                 ", isAlive=" + alive +
                 "stamina=" + stamina +
                 ", strength=" + strength +
-                '}';
+                '}' + "\n";
     }
 }
