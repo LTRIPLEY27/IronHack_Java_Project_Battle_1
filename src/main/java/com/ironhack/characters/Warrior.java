@@ -3,7 +3,6 @@ package com.ironhack.characters;
 import net.datafaker.Faker;
 
 import java.util.Random;
-import java.util.UUID;
 
 public class Warrior extends Character {
 
@@ -82,7 +81,7 @@ public class Warrior extends Character {
                 "name='" + name + '\'' +
                 ", id='" + id + '\'' +
                 ", hp=" + hp +
-                ", isAlive=" + isAlive +
+                ", isAlive=" + alive +
                 "stamina=" + stamina +
                 ", strength=" + strength +
                 '}';

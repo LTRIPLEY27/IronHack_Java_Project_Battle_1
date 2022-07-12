@@ -1,6 +1,7 @@
 package com.ironhack.ui;
 
 import com.ironhack.Graveyard;
+import com.ironhack.battle.Battle;
 import com.ironhack.characters.Character;
 import com.ironhack.characters.Warrior;
 import com.ironhack.characters.Wizard;
@@ -23,6 +24,7 @@ public class Menu {
                     [2] - Random Warrior
                     [3] - Random Wizard
                     [4] - Show Graveyard
+                    [99] - Battle
                     
                     [exit] - Exit Battle Simulator
                     ===============
@@ -36,6 +38,7 @@ public class Menu {
                 case "2" -> randomWarrior();
                 case "3" -> randomWizard();
                 case "4" -> showGraveyard();
+                case "99" -> battle();
                 case "exit" -> printWithColor("Bye bye", ConsoleColors.GREEN);
                 default -> printWithColor("Command not recognized!", ConsoleColors.RED);
             }
@@ -50,12 +53,22 @@ public class Menu {
 
     }
 
+    private void randomWarrior() {
+
+    }
+
     private void createWarrior() {
 
     }
-    
+
     private void showGraveyard() {
         graveyard.showGraveyard();
+    }
+
+    private void battle() {
+        Character char1 = new Warrior("First Warrior", Character.generateId(), 200, true, 30, 10);
+        Character char2 = new Wizard("First Wizard", Character.generateId(), 100, true, 40, 10);
+        Battle.oneVsOneBattle(char1, char2);
     }
 
     public void printWithColor(String text, String color){
