@@ -4,17 +4,23 @@ import com.ironhack.characters.Character;
 import com.ironhack.characters.Warrior;
 import com.ironhack.characters.Wizard;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 
 public class Party {
 
-    private static ArrayList<Character> members = new ArrayList<Character>();
+    private List<Character> members = new ArrayList<Character>();
 
 
-    public Party() {}
+    public Party() {
 
-    public ArrayList<Character> getMembers() {
+    }
+    public Party(List<Character> charactersList) {
+        members = charactersList;
+    }
+
+    public List<Character> getMembers() {
         return members;
     }
 
@@ -55,19 +61,20 @@ public class Party {
 
     }
 
-    public static ArrayList <Character> getRandomParty(int membersRand){
+    public static Party getRandomParty(int membersRand){
+        var randomParty = new Party();
         Random random = new Random();
         final int WARRIOR = 1;
 
         for(int i = 0; i < membersRand; i++) {
             int randomValue = random.nextInt(1, 3);
             if(randomValue == WARRIOR) {
-                members.add(Warrior.generateRandom());
+                randomParty.addCharacter(Warrior.generateRandom());
             } else {
-                members.add(Wizard.generateRandom());
+                randomParty.addCharacter(Wizard.generateRandom());
             }
         }
 
-        return members;
+        return randomParty;
     }
 }

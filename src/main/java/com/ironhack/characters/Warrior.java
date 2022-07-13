@@ -22,7 +22,7 @@ public class Warrior extends Character {
     private static final int MINIMUM_STRENGTH = 1;
 
     public Warrior(String name, String id, double hp, int stamina, int strength) {
-        super(name, id, hp);
+        super(name, hp);
         setStamina(stamina);
         setStrength(strength);
     }
