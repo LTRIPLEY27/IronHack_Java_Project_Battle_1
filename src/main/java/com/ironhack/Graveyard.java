@@ -2,20 +2,27 @@ package com.ironhack;
 import com.ironhack.characters.Character;
 import com.ironhack.characters.Wizard;
 import com.ironhack.characters.Warrior;
+import com.ironhack.ui.ConsoleColors;
+
 import java.util.ArrayList;
 
 public class Graveyard {
-    ArrayList<Character> deadCharacters;
+    ArrayList<Character> deadCharacters = new ArrayList<Character>();
     int wizardCount = 0;
     int warriorCount = 0;
     int othersCount = 0;
     int totalBodies = 0;
 
     public Graveyard() {
-        this.deadCharacters = new ArrayList<Character>();
-        System.out.println("The Graveyard has been created... 🪦🪦🪦");
-        System.out.println("... ... no bodies have been buried yet... 🕊 ");
-        System.out.println("🕸...🕷..... 🕸\n");
+        ConsoleColors.printWithColor("""
+                \nThe Graveyard has been created... 🪦🪦🪦
+                ... ... no bodies have been buried yet... 🕊 
+                🕸...🕷..... 🕸 \n
+                """, ConsoleColors.BLUE_BRIGHT);
+    }
+
+    public int howManyDeadCharacters() {
+        return totalBodies;
     }
 
     public void addDeadCharacter(Character deadCharacter) {

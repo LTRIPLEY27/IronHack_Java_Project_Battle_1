@@ -80,7 +80,7 @@ public class Warrior extends Character {
                 ", id='" + id + '\'' +
                 ", hp=" + hp +
                 ", isAlive=" + alive +
-                "stamina=" + stamina +
+                ", stamina=" + stamina +
                 ", strength=" + strength +
                 '}' + "\n";
     }
