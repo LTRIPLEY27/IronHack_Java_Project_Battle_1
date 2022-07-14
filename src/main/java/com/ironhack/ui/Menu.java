@@ -333,7 +333,6 @@ public class Menu {
 
     }
 
-
     //endregion
 
     private void randomWizard() {

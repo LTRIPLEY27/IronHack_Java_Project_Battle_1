@@ -3,7 +3,7 @@ package com.ironhack.characters;
 import java.util.Objects;
 import java.util.UUID;
 
-public abstract class Character {
+public abstract class Character implements Attacker {
 
     public static int HEALTH_DEATH_THRESHOLD = 0;
 
