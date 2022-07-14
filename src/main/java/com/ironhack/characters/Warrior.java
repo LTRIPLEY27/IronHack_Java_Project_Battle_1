@@ -13,13 +13,15 @@ public class Warrior extends Character {
 
     private int stamina;
     private int strength;
-
     private static final int MINIMUM_STAMINA = 10;
     private static final int MAXIMUM_STAMINA = 50;
     private static final int MINIMUM_HP = 100;
     private static final int MAXIMUM_HP = 200;
     private static final int MAXIMUM_STRENGTH = 10;
     private static final int MINIMUM_STRENGTH = 1;
+
+
+
 
     public Warrior(String name, String id, double hp, int stamina, int strength) {
         super(name, id, hp);
@@ -80,7 +82,7 @@ public class Warrior extends Character {
                 ", id='" + id + '\'' +
                 ", hp=" + hp +
                 ", isAlive=" + alive +
-                "stamina=" + stamina +
+                ", stamina=" + stamina +
                 ", strength=" + strength +
                 '}' + "\n";
     }

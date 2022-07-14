@@ -20,6 +20,8 @@ public abstract class Character {
         setAlive(hp > HEALTH_DEATH_THRESHOLD);
     }
 
+
+
     public String getName() {
         return name;
     }
