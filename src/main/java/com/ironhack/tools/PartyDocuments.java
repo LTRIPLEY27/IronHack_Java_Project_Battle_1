@@ -28,7 +28,17 @@ public class PartyDocuments {
         CSVWriter writer = new CSVWriter(outputfile);
 
         // adding header to csv
-        String[] header = { "characterType","Name", "id", "hp", "isAlive","mana","intelligence","stamina","strength" };
+        String[] header = {
+                "characterType", // index 0
+                "Name", // index 1
+                "id", // index 2
+                "hp", // index 3
+                "isAlive", // index 4
+                "mana", // index 5
+                "intelligence", // index 6
+                "stamina", // index 7
+                "strength" // index 8
+        };
         writer.writeNext(header);
 
         String[] data = new String[9];
