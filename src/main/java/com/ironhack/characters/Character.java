@@ -21,6 +21,8 @@ public abstract class Character implements Attacker {
         setAlive(hp > HEALTH_DEATH_THRESHOLD);
     }
 
+
+
     public String getName() {
         return name;
     }

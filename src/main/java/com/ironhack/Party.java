@@ -34,7 +34,7 @@ public class Party {
         members.add(member);
     }
 
-    public void membersParty() {
+    public void partyMembers() {
         for (Character member : members) {
             System.out.println(member.toString());
         }
@@ -54,10 +54,10 @@ public class Party {
 
         party.addCharacter(Merlin);
         party.addCharacter(VatoLoco);
-        party.membersParty();
+        party.partyMembers();
         party.removeMember(VatoLoco2);
 
-        party.membersParty();
+        party.partyMembers();
 
     }
 
