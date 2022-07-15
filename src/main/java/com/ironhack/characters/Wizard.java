@@ -21,7 +21,7 @@ public class Wizard extends Character{
     private static final int MAXIMUM_MANA = 50;
 
     public Wizard(String name, String id, double hp,  int mana, int intelligence) {
-        super(name, id, hp);
+        super(name, hp);
         setMana(mana);
         setIntelligence(intelligence);
     }

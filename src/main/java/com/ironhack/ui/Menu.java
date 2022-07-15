@@ -112,16 +112,17 @@ public class Menu {
                 case "4" -> {
                     System.out.println("how many characters do you want?");
                     party.getRandomParty(scanner.nextInt());
-                    party.membersParty();
+                    party.partyMembers();
                 }
                 case "exit" -> printWithColor("Bye bye", ConsoleColors.GREEN);
                 default -> printWithColor("Command not recognized!", ConsoleColors.RED);
             }
 
         } while (!input.equals("exit"));
-        party.addTeamToThePartyList(party.getMembers());
-        party.setMembers(new ArrayList<Character>());
+//        party.addTeamToThePartyList(party.getMembers());
+//        party.setMembers(new ArrayList<Character>());
 
+        party.partyMembers();
     }
 
     private void battle() {
@@ -131,9 +132,9 @@ public class Menu {
     }
 
     private void selectParty() {
-        party.returnList();
-        System.out.println("A party you need to choice for the battle, give me the number");
-        System.out.println(party.selectList(scanner.nextInt()));
+//        party.returnList();
+//        System.out.println("A party you need to choice for the battle, give me the number");
+//        System.out.println(party.selectList(scanner.nextInt()));
     }
 
     public void printWithColor(String text, String color){

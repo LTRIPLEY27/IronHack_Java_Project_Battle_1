@@ -4,20 +4,23 @@ import com.ironhack.characters.Character;
 import com.ironhack.characters.Warrior;
 import com.ironhack.characters.Wizard;
 
+import java.util.List;
 import java.util.*;
 
 
 public class Party {
 
-    private ArrayList<Character> members = new ArrayList<Character>();
-    private ArrayList< ArrayList <Character>> parties = new ArrayList<ArrayList<Character>>();
-    public Party(){}
+    private List<Character> members = new ArrayList<Character>();
 
-    public void setMembers(ArrayList<Character> members) {
-        this.members = members;
+
+    public Party() {
+
+    }
+    public Party(List<Character> charactersList) {
+        members = charactersList;
     }
 
-    public ArrayList<Character> getMembers() {
+    public List<Character> getMembers() {
         return members;
     }
 
@@ -32,7 +35,7 @@ public class Party {
         members.add(member);
     }
 
-    public void membersParty() {
+    public void partyMembers() {
         for (Character member : members) {
             System.out.println(member.toString());
         }
@@ -52,42 +55,28 @@ public class Party {
 
         party.addCharacter(Merlin);
         party.addCharacter(VatoLoco);
-        party.membersParty();
+        party.partyMembers();
         party.removeMember(VatoLoco2);
 
-        party.membersParty();
+        party.partyMembers();
 
     }
 
-    public  ArrayList <Character> getRandomParty(int membersRand){
+    public static Party getRandomParty(int membersRand){
+        var randomParty = new Party();
+        Random random = new Random();
         final int WARRIOR = 1;
 
         for(int i = 0; i < membersRand; i++) {
-            if(new Random().nextInt(1,3) == WARRIOR) {
-                members.add(Warrior.generateRandom());
+            int randomValue = random.nextInt(1, 3);
+            if(randomValue == WARRIOR) {
+                randomParty.addCharacter(Warrior.generateRandom());
             } else {
-                members.add(Wizard.generateRandom());
+                randomParty.addCharacter(Wizard.generateRandom());
             }
         }
-        return members;
-    }
 
-    public void addTeamToThePartyList(ArrayList<Character> team){
-
-        parties.add(team);
-    }
-
-    public  void returnList() {
-        int f = 1;
-        for(var i : parties) {
-            System.out.println("Party number : " + f + "\n" + i);
-            f++;
-        }
-    }
-
-    public ArrayList <Character> selectList(int choice) {
-        int election = choice - 1;
-        return parties.get(election);
+        return randomParty;
     }
     }
 
