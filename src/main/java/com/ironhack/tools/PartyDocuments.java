@@ -18,7 +18,6 @@ import java.util.Scanner;
 public class PartyDocuments {
 
 
-
     /**
      * takes a String partyName and a Party-Object party as arguments
      * and write the Characters of that Party-Object into a .csv document.
