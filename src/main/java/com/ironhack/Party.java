@@ -3,9 +3,9 @@ package com.ironhack;
 import com.ironhack.characters.Character;
 import com.ironhack.characters.Warrior;
 import com.ironhack.characters.Wizard;
-import java.util.ArrayList;
+
 import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 
 public class Party {
@@ -25,6 +25,7 @@ public class Party {
     }
 
     public void addCharacter(Character member) {
+
         for (Character character : members) {
             if (character.getName().equals(member.getName())) {
                 member.setName(member.getName() + Character.SUFFIX_NAME);
@@ -77,4 +78,6 @@ public class Party {
 
         return randomParty;
     }
-}
+    }
+
+
