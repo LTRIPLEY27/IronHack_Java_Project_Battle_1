@@ -7,10 +7,7 @@ import com.ironhack.characters.Character;
 import com.ironhack.characters.Warrior;
 import com.ironhack.characters.Wizard;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 
 public class Menu {
@@ -80,19 +77,35 @@ public class Menu {
             var menu = """
                     Welcome to Party Viewer
                     ===============
+                    [1] - Remove Party
                                         
                     [BACK] - GO BACK
-                    ===============
+                    ==============="
                     Write your COMMAND:
                     """;
             ConsoleColors.printWithColor(menu, ConsoleColors.BLACK_BACKGROUND_BRIGHT);
             input = scanner.nextLine().trim().toLowerCase();
             switch (input) {
+                case "1" -> removeParty();
                 case "back" -> ConsoleColors.printWithColor("Bye bye", ConsoleColors.GREEN);
                 default ->
                         ConsoleColors.printWithColor("Command not recognized! - %s".formatted(input), ConsoleColors.RED_BACKGROUND);
             }
         } while (!input.equals("back"));
+    }
+
+    private void removeParty() {
+        var id = 0;
+        int input = id;
+        ConsoleColors.printWithColor("Choose which party to delete", ConsoleColors.BLACK_BACKGROUND_BRIGHT);
+        id = Integer.parseInt(scanner.next());
+        try {
+            parties.remove(id);
+            ConsoleColors.printWithColor("Party deleted!", ConsoleColors.RED_BACKGROUND);
+        } catch (Exception e) {
+            ConsoleColors.printWithColor("Invalid number", ConsoleColors.BLACK_BACKGROUND_BRIGHT);
+            removeParty();
+        }
     }
 
     private void createParty() {
