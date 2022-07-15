@@ -103,7 +103,7 @@ public class PartyDocuments {
         if(file.exists()) {
             Scanner scanner = new Scanner(System.in);
             files = getFiles();
-            System.out.println("What Party do you want to Copy? ");
+            System.out.println("What Party do you want to Copy? \nPlease enter Number: ");
             String fileName = "";
 
             try {
