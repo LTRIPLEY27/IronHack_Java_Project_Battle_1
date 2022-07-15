@@ -18,23 +18,6 @@ import java.util.Scanner;
 public class PartyDocuments {
 
 
-    public static void main(String[] args) throws CsvValidationException, IOException {
-       Party party1 = new Party();
-
-       party1 = getPartyFromFile();
-
-        Character p1 = Wizard.generateRandom();
-        Character p2 = Warrior.generateRandom();
-        Character p3 = Wizard.generateRandom();
-
-        Party pr2 = new Party();
-        pr2.addCharacter(p1);
-        pr2.addCharacter(p2);
-        pr2.addCharacter(p3);
-
-        PartyDocuments.writeToFile("test",pr2);
-
-    }
 
     /**
      * takes a String partyName and a Party-Object party as arguments
