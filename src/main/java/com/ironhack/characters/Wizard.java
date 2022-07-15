@@ -6,6 +6,15 @@ import java.util.Random;
 
 public class Wizard extends Character{
 
+    // random generator constants
+    private static final int MINIMUM_HP = 50;
+    private static final int MAXIMUM_HP = 100;
+    private static final int MINIMUM_INTELLIGENCE = 1;
+    private static final int MAXIMUM_INTELLIGENCE = 50;
+    private static final int MINIMUM_MANA = 10;
+    private static final int MAXIMUM_MANA = 50;
+
+    // attack constants
     public static final int MANA_ATTACK_THRESHOLD = 5;
     public static final int FIREBALL_MANA_USAGE = -5;
     public static final int STAFF_HIT_MANA_USAGE = 1;
@@ -13,12 +22,6 @@ public class Wizard extends Character{
 
     private int mana;
     private int intelligence;
-    private static final int MINIMUM_HP = 50;
-    private static final int MAXIMUM_HP = 100;
-    private static final int MINIMUM_INTELLIGENCE = 1;
-    private static final int MAXIMUM_INTELLIGENCE = 50;
-    private static final int MINIMUM_MANA = 10;
-    private static final int MAXIMUM_MANA = 50;
 
     public Wizard(String name, String id, double hp,  int mana, int intelligence) {
         super(name, hp);
