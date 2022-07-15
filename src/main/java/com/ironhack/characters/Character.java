@@ -5,14 +5,14 @@ import java.util.UUID;
 
 public abstract class Character implements Attacker {
 
-    public static int HEALTH_DEATH_THRESHOLD = 0;
+    public static final int HEALTH_DEATH_THRESHOLD = 0;
+    public static final String SUFFIX_NAME = " Jr";
 
     protected String name;
     protected String id;
     protected double hp;
     protected boolean alive;
 
-    public static final String SUFFIX_NAME = " Jr";
     
     public Character(String name, double hp) {
         setId(Character.generateId());
@@ -20,8 +20,6 @@ public abstract class Character implements Attacker {
         setHp(hp);
         setAlive(hp > HEALTH_DEATH_THRESHOLD);
     }
-
-
 
     public String getName() {
         return name;

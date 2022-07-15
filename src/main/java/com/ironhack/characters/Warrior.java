@@ -6,6 +6,15 @@ import java.util.Random;
 
 public class Warrior extends Character {
 
+    // random generator constants
+    private static final int MINIMUM_STAMINA = 10;
+    private static final int MAXIMUM_STAMINA = 50;
+    private static final int MINIMUM_HP = 100;
+    private static final int MAXIMUM_HP = 200;
+    private static final int MAXIMUM_STRENGTH = 10;
+    private static final int MINIMUM_STRENGTH = 1;
+
+    // attack constants
     public static final int STAMINA_ATTACK_THRESHOLD = 5;
     public static final int HEAVY_ATTACK_STAMINA_USAGE = -5;
     public static final int WEAK_ATTACK_STAMINA_USAGE = 1;
@@ -13,12 +22,6 @@ public class Warrior extends Character {
 
     private int stamina;
     private int strength;
-    private static final int MINIMUM_STAMINA = 10;
-    private static final int MAXIMUM_STAMINA = 50;
-    private static final int MINIMUM_HP = 100;
-    private static final int MAXIMUM_HP = 200;
-    private static final int MAXIMUM_STRENGTH = 10;
-    private static final int MINIMUM_STRENGTH = 1;
 
 
 
