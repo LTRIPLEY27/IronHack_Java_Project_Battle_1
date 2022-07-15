@@ -193,17 +193,23 @@ public class Menu {
                                     """, ConsoleColors.RED_BACKGROUND);
                         }
                     }
-                    case "3" -> deleteParty();
+                    case "3" -> {
+                        deleteParty(partySelected);
+                        partySelected = null;
+                    }
                     case "back" -> ConsoleColors.printWithColor("Bye bye", ConsoleColors.GREEN);
                     default -> ConsoleColors.printWithColor("Command not recognized! - %s".formatted(input),
                             ConsoleColors.RED_BACKGROUND);
                 }
-            } while (!input.equals("back"));
+            } while (!input.equals("back") && partySelected != null);
         }
 
     }
 
-    private void deleteParty() {
+    private void deleteParty(Party party) {
+            parties.remove(party);
+            ConsoleColors.printWithColor("Party deleted!", ConsoleColors.RED_BACKGROUND);
+
     }
 
     private void createParty() {
