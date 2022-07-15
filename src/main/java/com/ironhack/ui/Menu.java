@@ -97,6 +97,7 @@ public class Menu {
     private void removeParty() {
         var id = 0;
         int input = id;
+        ConsoleColors.printWithColor(String.valueOf(parties), ConsoleColors.YELLOW_BACKGROUND);
         ConsoleColors.printWithColor("Choose which party to delete", ConsoleColors.BLACK_BACKGROUND_BRIGHT);
         id = Integer.parseInt(scanner.next());
         try {
