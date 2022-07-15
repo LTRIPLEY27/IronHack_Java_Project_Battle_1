@@ -40,7 +40,10 @@ public class Menu {
                 case "1" -> partyManager();
                 case "2" -> graveyardViewer();
                 case "3" -> battle();
-                case "exit" -> ConsoleColors.printWithColor("Bye bye", ConsoleColors.GREEN);
+                case "exit" -> {
+                    ConsoleColors.printWithColor("Bye bye", ConsoleColors.GREEN);
+                    System.exit(1);
+                }
                 default -> ConsoleColors.printWithColor("Command not recognized! - %s".formatted(input),
                         ConsoleColors.RED_BACKGROUND);
             }
@@ -59,7 +62,8 @@ public class Menu {
                     [3] - CREATE PARTY RANDOMNLY
                     [4] - IMPORT PARTY FROM CSV
 
-                    [BACK] - GO BACK
+                    [B] - GO BACK
+                    [EXIT] - Exit Battle Simulator
                     ===============
                     Write your COMMAND:
                     """;
@@ -70,11 +74,15 @@ public class Menu {
                 case "2" -> createParty();
                 case "3" -> createPartyRandomly();
                 case "4" -> importParty();
-                case "back" -> ConsoleColors.printWithColor("Bye bye", ConsoleColors.GREEN);
+                case "b" -> ConsoleColors.printWithColor("Bye bye", ConsoleColors.GREEN);
+                case "exit" -> {
+                    ConsoleColors.printWithColor("Bye bye", ConsoleColors.GREEN);
+                    System.exit(1);
+                }
                 default -> ConsoleColors.printWithColor("Command not recognized! - %s".formatted(input),
                         ConsoleColors.RED_BACKGROUND);
             }
-        } while (!input.equals("back"));
+        } while (!input.equals("b"));
     }
 
     private void createPartyRandomly() {
@@ -112,7 +120,8 @@ public class Menu {
                     """;
 
             var menu2 = """
-                    [BACK] - GO BACK
+                    [B] - GO BACK
+                    [EXIT] - Exit Battle Simulator
                     ===============
                     Select the party you want:
                     """;
@@ -127,21 +136,25 @@ public class Menu {
             ConsoleColors.printWithColor(menu2, ConsoleColors.BLACK_BACKGROUND_BRIGHT);
             input = scanner.nextLine().trim().toLowerCase();
             switch (input) {
-                case "back" -> ConsoleColors.printWithColor("Bye bye", ConsoleColors.GREEN);
+                case "b" -> ConsoleColors.printWithColor("Bye bye", ConsoleColors.GREEN);
+                case "exit" -> {
+                    ConsoleColors.printWithColor("Bye bye", ConsoleColors.GREEN);
+                    System.exit(1);
+                }
                 default -> {
                     try {
                         var index = Integer.parseInt(input);
                         partySelected = parties.get(index);
                         ConsoleColors.printWithColor(partySelected.toString(), ConsoleColors.BLACK_BACKGROUND_BRIGHT);
-                    }catch (Exception e) {
+                    } catch (Exception e) {
                         ConsoleColors.printWithColor("Command not recognized! - %s".formatted(input),
                                 ConsoleColors.RED_BACKGROUND);
                     }
                 }
             }
-        } while (!input.equals("back") && partySelected == null);
+        } while (!input.equals("b") && partySelected == null);
 
-        if(partySelected != null) {
+        if (partySelected != null) {
             do {
                 var menu = """
                         Welcome to Party Manager
@@ -150,7 +163,8 @@ public class Menu {
                         [2] - EXPORT PARTY TO CSV
                         [3] - DELETE PARTY
 
-                        [BACK] - GO BACK
+                        [B] - GO BACK
+                        [EXIT] - Exit Battle Simulator
                         ===============
                         Write your COMMAND:
                         """;
@@ -197,18 +211,22 @@ public class Menu {
                         deleteParty(partySelected);
                         partySelected = null;
                     }
-                    case "back" -> ConsoleColors.printWithColor("Bye bye", ConsoleColors.GREEN);
+                    case "b" -> ConsoleColors.printWithColor("Bye bye", ConsoleColors.GREEN);
+                    case "exit" -> {
+                        ConsoleColors.printWithColor("Bye bye", ConsoleColors.GREEN);
+                        System.exit(1);
+                    }
                     default -> ConsoleColors.printWithColor("Command not recognized! - %s".formatted(input),
                             ConsoleColors.RED_BACKGROUND);
                 }
-            } while (!input.equals("back") && partySelected != null);
+            } while (!input.equals("b") && partySelected != null);
         }
 
     }
 
     private void deleteParty(Party party) {
-            parties.remove(party);
-            ConsoleColors.printWithColor("Party deleted!", ConsoleColors.RED_BACKGROUND);
+        parties.remove(party);
+        ConsoleColors.printWithColor("Party deleted!", ConsoleColors.RED_BACKGROUND);
 
     }
 
@@ -223,8 +241,9 @@ public class Menu {
                     [2] - Add Wizard
                     [3] - View current party
 
-                    [SAVE] - SAVE THIS PARTY
-                    [BACK] - GO BACK
+                    [S] - SAVE THIS PARTY
+                    [B] - GO BACK
+                    [EXIT] - Exit Battle Simulator
                     ===============
                     Write your COMMAND:
                     """;
@@ -234,15 +253,19 @@ public class Menu {
                 case "1" -> party.addCharacter(createWarrior());
                 case "2" -> party.addCharacter(createWizard());
                 case "3" -> party.partyMembers();
-                case "save" -> {
+                case "s" -> {
                     parties.add(party);
                     ConsoleColors.printWithColor("Party saved", ConsoleColors.GREEN);
                 }
-                case "back" -> ConsoleColors.printWithColor("Bye bye", ConsoleColors.GREEN);
+                case "b" -> ConsoleColors.printWithColor("Bye bye", ConsoleColors.GREEN);
+                case "exit" -> {
+                    ConsoleColors.printWithColor("Bye bye", ConsoleColors.GREEN);
+                    System.exit(1);
+                }
                 default -> ConsoleColors.printWithColor("Command not recognized! - %s".formatted(input),
                         ConsoleColors.RED_BACKGROUND);
             }
-        } while (!input.equals("back") && !input.equals("save"));
+        } while (!input.equals("b") && !input.equals("s"));
     }
 
     private Wizard createWizard() {
@@ -299,7 +322,8 @@ public class Menu {
                     [1] - MANUAL BATTLE
                     [2] - AUTOMATED
 
-                    [BACK] - GO BACK
+                    [B] - GO BACK
+                    [EXIT] - Exit Battle Simulator
                     ===============
                     Write your COMMAND:
                     """;
@@ -308,23 +332,149 @@ public class Menu {
             switch (input) {
                 case "1" -> manualBattleMenu();
                 case "2" -> automatedBattleMenu();
-                case "back" -> ConsoleColors.printWithColor("Bye bye", ConsoleColors.GREEN);
+                case "b" -> ConsoleColors.printWithColor("Bye bye", ConsoleColors.GREEN);
+                case "exit" -> {
+                    ConsoleColors.printWithColor("Bye bye", ConsoleColors.GREEN);
+                    System.exit(1);
+                }
                 default -> ConsoleColors.printWithColor("Command not recognized! - %s".formatted(input),
                         ConsoleColors.RED_BACKGROUND);
             }
-        } while (!input.equals("back"));
+        } while (!input.equals("b"));
     }
 
     private void manualBattleMenu() {
+        ConsoleColors.printWithColor("""
+                                            
+                        ===============
+                        Welcome to the Battle part of this Battle Simulator!
+                        I'm sure you can't wait to start but first we need to check some things...
+                                            
+                        """,
+                ConsoleColors.PURPLE_BACKGROUND);
 
-        // TODO: party selection - if not enough parties, create them
+        if (parties.size() < 2) {
+            ConsoleColors.printWithColor("""
+                            You don't have enough parties. Go back and fix it!
+                            ===============
+                                                
+                            """,
+                    ConsoleColors.RED_BACKGROUND);
+        } else {
+            Party partyA = null;
+            Party partyB = null;
+            ConsoleColors.printWithColor("""
+                            There are enough parties.
+                            First you have to choose the two that will fight!
+                            """,
+                    ConsoleColors.PURPLE_BACKGROUND);
+            String input;
+            do {
+                for (int i = 0; i < parties.size(); i++) {
+                    if (partyA != null && partyA.equals(parties.get(i))) {
+                        continue;
+                    }
+                    ConsoleColors.printWithColor("[" + i + "] " + parties.get(i).toString(), ConsoleColors.BLACK_BACKGROUND_BRIGHT);
+                }
+                input = scanner.nextLine().trim().toLowerCase();
+                switch (input) {
+                    case "b" -> ConsoleColors.printWithColor("Bye bye", ConsoleColors.GREEN);
+                    case "exit" -> {
+                        ConsoleColors.printWithColor("Bye bye", ConsoleColors.GREEN);
+                        System.exit(1);
+                    }
+                    default -> {
+                        try {
+                            var index = Integer.parseInt(input);
+                            if (partyA == null) {
+                                partyA = parties.get(index);
+                                ConsoleColors.printWithColor("Selected: " + partyA.toString(), ConsoleColors.BLACK_BACKGROUND_BRIGHT);
+                            } else {
+                                partyB = parties.get(index);
+                                ConsoleColors.printWithColor("Selected: " + partyB.toString(), ConsoleColors.BLACK_BACKGROUND_BRIGHT);
+                            }
+                        } catch (Exception e) {
+                            ConsoleColors.printWithColor("Command not recognized! - %s".formatted(input),
+                                    ConsoleColors.RED_BACKGROUND);
+                        }
+                    }
+                }
+            } while (!input.equals("b") && (partyA == null || partyB == null));
 
-        // TODO: select characters that will participate in the battle
+            if (partyA != null && partyB != null) {
 
-        // TODO: Battle.oneVsOneBattle()
+                do{
+                    Character characterPartyA = selectCharacter(partyA);
+                    Character characterPartyB = selectCharacter(partyB);
 
-        // TODO: remove dead character from party and add it to the graveyard
+                    Battle.oneVsOneBattle(characterPartyA, characterPartyB);
 
+                    if (!characterPartyA.isAlive()) {
+                        partyA.removeMember(characterPartyA);
+                        graveyard.addDeadCharacter(characterPartyA);
+                    }
+                    if (!characterPartyB.isAlive()) {
+                        partyB.removeMember(characterPartyB);
+                        graveyard.addDeadCharacter(characterPartyB);
+                    }
+                }while (!partyA.getMembers().isEmpty() && !partyB.getMembers().isEmpty());
+
+                Party winner = null;
+
+                if(partyA.getMembers().isEmpty()) winner = partyB;
+                else if(partyB.getMembers().isEmpty()) winner = partyA;
+
+                var battleEnd = """
+
+                We have a winner!!!
+                                
+                %s won!! Congratulations! I hope it was the party you chose.
+
+                """.formatted(winner.getName());
+
+
+                ConsoleColors.printWithColor(battleEnd, ConsoleColors.BLUE_BACKGROUND);
+
+                ConsoleColors.printWithColor("Press enter to continue...", ConsoleColors.PURPLE_BACKGROUND);
+                scanner.nextLine();
+
+            }
+
+        }
+
+    }
+
+    private Character selectCharacter(Party party) {
+        Character selectedCharacter = null;
+        ConsoleColors.printWithColor("""
+                        Select your combatant!
+                        """,
+                ConsoleColors.PURPLE_BACKGROUND);
+        String input;
+        do {
+            for (int i = 0; i < party.getMembers().size(); i++) {
+                ConsoleColors.printWithColor("[" + i + "] " + party.getMembers().get(i), ConsoleColors.BLACK_BACKGROUND_BRIGHT);
+            }
+            input = scanner.nextLine().trim().toLowerCase();
+            switch (input) {
+                case "b" -> ConsoleColors.printWithColor("Bye bye", ConsoleColors.GREEN);
+                case "exit" -> {
+                    ConsoleColors.printWithColor("Bye bye", ConsoleColors.GREEN);
+                    System.exit(1);
+                }
+                default -> {
+                    try {
+                        var index = Integer.parseInt(input);
+                        selectedCharacter = party.getMembers().get(index);
+                        ConsoleColors.printWithColor("Selected: " + selectedCharacter, ConsoleColors.BLACK_BACKGROUND_BRIGHT);
+                    } catch (Exception e) {
+                        ConsoleColors.printWithColor("Command not recognized! - %s".formatted(input),
+                                ConsoleColors.RED_BACKGROUND);
+                    }
+                }
+            }
+        } while (!input.equals("b") && selectedCharacter == null);
+        return selectedCharacter;
     }
 
     private void automatedBattleMenu() {
@@ -353,6 +503,10 @@ public class Menu {
                 case "y" -> automatedBattle();
                 case "n" ->
                         ConsoleColors.printWithColor("I knew you weren't ready...\n\n", ConsoleColors.PURPLE_BACKGROUND);
+                case "exit" -> {
+                    ConsoleColors.printWithColor("Bye bye", ConsoleColors.GREEN);
+                    System.exit(1);
+                }
                 default -> ConsoleColors.printWithColor("Command not recognized! - %s".formatted(input),
                         ConsoleColors.RED_BACKGROUND);
             }
@@ -391,83 +545,75 @@ public class Menu {
                 """;
         ConsoleColors.printWithColor(enoughPartiesText, ConsoleColors.PURPLE_BACKGROUND);
 
+
+        ConsoleColors.printWithColor("Press enter to continue...", ConsoleColors.PURPLE_BACKGROUND);
+        scanner.nextLine();
+
+
         Party partyA = parties.get(0);
         Party partyB = parties.get(1);
         System.out.println(partyA.getMembers().size());
         System.out.println(partyB.getMembers().size());
 
-        String input;
         Party winner = null;
         do {
-            input = scanner.nextLine().trim().toLowerCase();
-            switch (input) {
-                default -> {
-                    if (partyA.getMembers().isEmpty())
-                        winner = partyB;
-                    else if (partyB.getMembers().isEmpty())
-                        winner = partyA;
-                    else {
-                        var charA = partyA.getMembers().get(0);
-                        var charB = partyB.getMembers().get(0);
+            if (partyA.getMembers().isEmpty())
+                winner = partyB;
+            else if (partyB.getMembers().isEmpty())
+                winner = partyA;
+            else {
+                var charA = partyA.getMembers().get(0);
+                var charB = partyB.getMembers().get(0);
 
-                        ConsoleColors.printWithColor(
-                                """
+                ConsoleColors.printWithColor(
+                        """
 
-                                        =================
-                                        Let's Battle!!
+                                =================
+                                Let's Battle!!
 
-                                        This battle will be between %s and %s
-                                        they are a %s and a %s
+                                This battle will be between %s and %s
+                                they are a %s and a %s
 
-                                        =================
+                                =================
 
-                                        """.formatted(charA.getName(), charB.getName(),
-                                        charA instanceof Warrior ? "warrior" : "wizard",
-                                        charB instanceof Warrior ? "warrior" : "wizard"),
-                                ConsoleColors.PURPLE_BACKGROUND);
+                                """.formatted(charA.getName(), charB.getName(),
+                                charA instanceof Warrior ? "warrior" : "wizard",
+                                charB instanceof Warrior ? "warrior" : "wizard"),
+                        ConsoleColors.PURPLE_BACKGROUND);
 
-                        Battle.oneVsOneBattle(charA, charB);
-                        if (!charA.isAlive()) {
+                Battle.oneVsOneBattle(charA, charB);
+                if (!charA.isAlive()) {
 
-                            ConsoleColors.printWithColor("""
-                                    %s just passwed away
-                                    """.formatted(charA.getName()), ConsoleColors.PURPLE_BACKGROUND);
+                    ConsoleColors.printWithColor("""
+                            %s just passwed away
+                            """.formatted(charA.getName()), ConsoleColors.PURPLE_BACKGROUND);
 
-                            partyA.removeMember(charA);
-                            graveyard.addDeadCharacter(charA);
-                        }
-                        if (!charB.isAlive()) {
-
-                            partyB.removeMember(charB);
-                            graveyard.addDeadCharacter(charB);
-                        }
-
-                    }
+                    partyA.removeMember(charA);
+                    graveyard.addDeadCharacter(charA);
                 }
+                if (!charB.isAlive()) {
+
+                    partyB.removeMember(charB);
+                    graveyard.addDeadCharacter(charB);
+                }
+
             }
-        } while (!input.equals("g") && winner == null);
+        } while (winner == null);
 
         var battleEnd = """
 
                 We have a winner!!!
-                
+                                
                 %s won!! Congratulations! I hope it was the party you chose.
 
                 """.formatted(winner.getName());
-        ConsoleColors.printWithColor(battleEnd, ConsoleColors.YELLOW_BACKGROUND);
+        ConsoleColors.printWithColor(battleEnd, ConsoleColors.BLUE_BACKGROUND);
 
-        // TODO: simulate battle - fully automated
+        ConsoleColors.printWithColor("Press enter to continue...", ConsoleColors.PURPLE_BACKGROUND);
+        scanner.nextLine();
 
     }
 
     // endregion
-
-    private void randomWizard() {
-        System.out.println(Wizard.generateRandom());
-    }
-
-    private void randomWarrior() {
-
-    }
 
 }
